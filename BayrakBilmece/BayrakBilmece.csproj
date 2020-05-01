@@ -120,6 +120,9 @@
     <Compile Include="Yonetici.Designer.cs">
       <DependentUpon>Yonetici.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Ayarlar.resx">
+      <DependentUpon>Ayarlar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
     </EmbeddedResource>
