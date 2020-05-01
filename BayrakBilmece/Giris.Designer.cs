@@ -34,8 +34,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkRed;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.ClientSize = new System.Drawing.Size(284, 461);
+            this.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Name = "Giris";
             this.Text = "Giris";
             this.ResumeLayout(false);

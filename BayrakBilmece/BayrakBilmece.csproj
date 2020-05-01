@@ -120,11 +120,32 @@
     <Compile Include="Yonetici.Designer.cs">
       <DependentUpon>Yonetici.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AnaMenu.resx">
+      <DependentUpon>AnaMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Ayarlar.resx">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cevap.resx">
+      <DependentUpon>Cevap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Duzenle.resx">
+      <DependentUpon>Duzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Ekle.resx">
+      <DependentUpon>Ekle.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Giris.resx">
       <DependentUpon>Giris.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Hakkinda.resx">
+      <DependentUpon>Hakkinda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Oyun.resx">
+      <DependentUpon>Oyun.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OyunAyari.resx">
+      <DependentUpon>OyunAyari.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -135,6 +156,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Sonuc.resx">
+      <DependentUpon>Sonuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Uyari.resx">
+      <DependentUpon>Uyari.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Yonetici.resx">
+      <DependentUpon>Yonetici.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
