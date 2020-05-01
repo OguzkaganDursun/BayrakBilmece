@@ -93,7 +93,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(323, 21);
+            this.button1.Location = new System.Drawing.Point(323, 13);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(85, 85);
             this.button1.TabIndex = 4;
@@ -108,7 +108,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Location = new System.Drawing.Point(414, 21);
+            this.button2.Location = new System.Drawing.Point(414, 13);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(85, 85);
             this.button2.TabIndex = 5;
@@ -123,7 +123,7 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button3.ForeColor = System.Drawing.Color.Snow;
-            this.button3.Location = new System.Drawing.Point(505, 21);
+            this.button3.Location = new System.Drawing.Point(505, 13);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(85, 85);
             this.button3.TabIndex = 6;
@@ -138,7 +138,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button4.ForeColor = System.Drawing.Color.Snow;
-            this.button4.Location = new System.Drawing.Point(596, 21);
+            this.button4.Location = new System.Drawing.Point(596, 13);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(85, 85);
             this.button4.TabIndex = 7;
