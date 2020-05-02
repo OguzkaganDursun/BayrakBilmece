@@ -21,30 +21,39 @@ namespace BayrakBilmece
         private void timer1_Tick(object sender, EventArgs e)
         {
             int yuzde;
-            
+
             if (progressBar1.Value < 100)
             {
                 yuzde = progressBar1.Value += 100 / 20;
                 label3.Text = "%" + yuzde;
+
+
+            }
+            else
+            {
+                timer1.Stop();
+                timer2.Stop();
+            }     
+        }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            
+            if (progressBar1.Value < 100)
+            {
                 nokta++;
-                if (nokta == 1)
-                    label2.Text = "Oyun YükleniyorA.";
-                if (nokta == 2)
-                    label2.Text = "Oyun YükleniyorAA..";
-                if (nokta == 3)
+                label2.Text = "Oyun Yükleniyor";
+                for (int a = 0; a < nokta; a++)
                 {
-                    label2.Text = "Oyun YükleniyorAAA...";
+                    label2.Text = label2.Text + ".";
                 }
-                else
+                if (nokta > 3)
                 {
-                    label2.Text = "Oyun Yükleniyor";
                     nokta = 0;
+                    label2.Text = "Oyun Yükleniyor";
                 }
                     
             }
-            else
-                timer1.Stop();
-                
         }
     }
 }
