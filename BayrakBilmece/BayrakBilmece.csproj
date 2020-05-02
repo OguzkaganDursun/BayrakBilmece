@@ -120,6 +120,12 @@
     <Compile Include="Yonetici.Designer.cs">
       <DependentUpon>Yonetici.cs</DependentUpon>
     </Compile>
+    <Compile Include="Bilgilendirme.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bilgilendirme.Designer.cs">
+      <DependentUpon>Bilgilendirme.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AnaMenu.resx">
       <DependentUpon>AnaMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Yonetici.resx">
       <DependentUpon>Yonetici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Bilgilendirme.resx">
+      <DependentUpon>Bilgilendirme.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

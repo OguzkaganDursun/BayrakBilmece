@@ -28,5 +28,11 @@ namespace BayrakBilmece
             Duzenle duzenle = new Duzenle();
             duzenle.ShowDialog();
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            bilgilendirme.ShowDialog();
+        }
     }
 }
