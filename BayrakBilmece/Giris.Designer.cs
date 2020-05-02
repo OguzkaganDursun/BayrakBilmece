@@ -96,9 +96,9 @@
             this.label2.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.Location = new System.Drawing.Point(70, 69);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(158, 28);
+            this.label2.Size = new System.Drawing.Size(146, 28);
             this.label2.TabIndex = 3;
-            this.label2.Text = "Oyun Yükleniyor...";
+            this.label2.Text = "Oyun Yükleniyor";
             // 
             // label3
             // 
@@ -116,7 +116,6 @@
             this.progressBar1.ForeColor = System.Drawing.Color.OrangeRed;
             this.progressBar1.Location = new System.Drawing.Point(-1, -1);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
-            this.progressBar1.Maximum = 2000;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(302, 10);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
