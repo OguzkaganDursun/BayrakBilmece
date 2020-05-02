@@ -82,7 +82,16 @@ namespace BayrakBilmece
 
         private void button7_Click(object sender, EventArgs e)
         {
+            AnaMenu anaMenu = new AnaMenu();          
+            anaMenu.Show();
+            this.Hide();
+        }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Yonetici yonetici = new Yonetici();
+            yonetici.Show();
+            this.Hide();
         }
     }
 }
