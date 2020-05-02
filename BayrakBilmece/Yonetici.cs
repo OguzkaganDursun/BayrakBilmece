@@ -16,5 +16,17 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Ekle ekle = new Ekle();
+            ekle.ShowDialog();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Duzenle duzenle = new Duzenle();
+            duzenle.ShowDialog();
+        }
     }
 }
