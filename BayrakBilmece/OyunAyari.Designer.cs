@@ -57,12 +57,13 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Location = new System.Drawing.Point(51, 448);
+            this.button2.Location = new System.Drawing.Point(51, 425);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(197, 41);
             this.button2.TabIndex = 7;
             this.button2.Text = "İptal";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -72,12 +73,13 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(51, 401);
+            this.button1.Location = new System.Drawing.Point(51, 378);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(197, 41);
             this.button1.TabIndex = 6;
             this.button1.Text = "Başla";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -85,9 +87,9 @@
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox1.Location = new System.Drawing.Point(51, 295);
+            this.groupBox1.Location = new System.Drawing.Point(51, 284);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(197, 100);
+            this.groupBox1.Size = new System.Drawing.Size(197, 80);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             // 
@@ -101,7 +103,7 @@
             "Kolay",
             "Orta",
             "Zor"});
-            this.comboBox1.Location = new System.Drawing.Point(23, 54);
+            this.comboBox1.Location = new System.Drawing.Point(23, 43);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(150, 24);
             this.comboBox1.TabIndex = 9;
@@ -113,7 +115,7 @@
             this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(29, 16);
+            this.label1.Location = new System.Drawing.Point(29, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 22);
             this.label1.TabIndex = 9;
@@ -132,7 +134,7 @@
             this.groupBox2.Controls.Add(this.pictureBox1);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.groupBox2.Location = new System.Drawing.Point(51, 47);
+            this.groupBox2.Location = new System.Drawing.Point(51, 36);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(197, 242);
             this.groupBox2.TabIndex = 9;
@@ -239,7 +241,7 @@
             this.label3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label3.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label3.ForeColor = System.Drawing.Color.Snow;
-            this.label3.Location = new System.Drawing.Point(89, 22);
+            this.label3.Location = new System.Drawing.Point(89, 11);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(122, 22);
             this.label3.TabIndex = 10;
@@ -252,7 +254,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.ClientSize = new System.Drawing.Size(300, 500);
+            this.ClientSize = new System.Drawing.Size(300, 480);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);

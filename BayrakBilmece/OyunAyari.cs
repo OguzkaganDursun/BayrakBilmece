@@ -16,5 +16,18 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Oyun oyun = new Oyun();
+            oyun.Show();
+            this.Close();
+
+        }
     }
 }
