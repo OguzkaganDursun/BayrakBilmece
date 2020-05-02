@@ -34,5 +34,12 @@ namespace BayrakBilmece
             Bilgilendirme bilgilendirme = new Bilgilendirme();
             bilgilendirme.ShowDialog();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            AnaMenu anaMenu = new AnaMenu();
+            anaMenu.Show();
+            this.Close();
+        }
     }
 }

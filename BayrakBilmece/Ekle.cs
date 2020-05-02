@@ -21,5 +21,12 @@ namespace BayrakBilmece
         {
             this.Close();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            bilgilendirme.ShowDialog();
+            this.Close();
+        }
     }
 }
