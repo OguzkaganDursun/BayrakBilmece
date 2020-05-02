@@ -26,19 +26,19 @@ namespace BayrakBilmece
             {
                 yuzde = progressBar1.Value += 100 / 20;
                 label3.Text = "%" + yuzde;
-
-
             }
             else
             {
                 timer1.Stop();
                 timer2.Stop();
+                PanelGotur(panel2);             
+                PanelGetir(panel3);
+                PanelGetir2(panel5);
             }     
         }
 
         private void timer2_Tick(object sender, EventArgs e)
-        {
-            
+        {          
             if (progressBar1.Value < 100)
             {
                 nokta++;
@@ -51,9 +51,38 @@ namespace BayrakBilmece
                 {
                     nokta = 0;
                     label2.Text = "Oyun Yükleniyor";
-                }
-                    
+                }                   
             }
+        }
+        
+        public void PanelGetir(Panel panel)
+        {
+            panel.Location = new Point(0,220);
+        }
+        public void PanelGetir2(Panel panel)
+        {
+            panel.Location = new Point(0, 460);
+        }
+        public void PanelGotur(Panel panel)
+        {
+            panel.Location = new Point(-300, 220);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            PanelGotur(panel3);
+            PanelGetir(panel4);
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PanelGotur(panel3);
+            PanelGetir(panel6);
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
