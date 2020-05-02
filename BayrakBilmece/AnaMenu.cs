@@ -34,5 +34,11 @@ namespace BayrakBilmece
             Hakkinda hakkinda = new Hakkinda();
             hakkinda.ShowDialog();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            KarakterSecimi karakterSecimi = new KarakterSecimi();
+            karakterSecimi.ShowDialog();
+        }
     }
 }
