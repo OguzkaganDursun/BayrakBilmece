@@ -17,9 +17,11 @@ namespace BayrakBilmece
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+            progressBar1.Value += 100;
         }
     }
 }
