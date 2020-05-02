@@ -92,5 +92,17 @@ namespace BayrakBilmece
             yonetici.Show();
             this.Hide();
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Ayarlar ayarlar = new Ayarlar();
+            ayarlar.ShowDialog();
+            ayarlar.button1.Text = "Oğuz";
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -16,7 +16,7 @@ namespace BayrakBilmece
         {
             //Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AnaMenu());
+            Application.Run(new Giris());
         }
     }
 }
