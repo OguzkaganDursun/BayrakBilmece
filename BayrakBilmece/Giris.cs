@@ -79,7 +79,7 @@ namespace BayrakBilmece
             PanelGotur(panel3);
             PanelGetir(panel6);
         }
-        public AnaMenu anaMenu = new AnaMenu();
+        public static AnaMenu anaMenu = new AnaMenu();
         private void button7_Click(object sender, EventArgs e)
         {                     
             anaMenu.Show();

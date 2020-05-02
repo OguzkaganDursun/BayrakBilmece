@@ -22,5 +22,17 @@ namespace BayrakBilmece
             OyunAyari oyunAyari = new OyunAyari();
             oyunAyari.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Ayarlar ayarlar = new Ayarlar();
+            ayarlar.ShowDialog();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Hakkinda hakkinda = new Hakkinda();
+            hakkinda.ShowDialog();
+        }
     }
 }

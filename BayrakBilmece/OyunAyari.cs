@@ -27,7 +27,7 @@ namespace BayrakBilmece
             Oyun oyun = new Oyun();
             oyun.Show();
             this.Close();
-
+            Giris.anaMenu.Hide();
         }
     }
 }
