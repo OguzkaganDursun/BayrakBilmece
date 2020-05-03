@@ -24,9 +24,19 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BilgilendirmeKaydedildi bilgilendirme = new BilgilendirmeKaydedildi();
+            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            TextBox[] texts = new TextBox[4];
+            ComboBox combo = new ComboBox();
+            texts[0]= textBox1;
+            texts[1] = textBox2;
+            texts[2] = textBox3;
+            texts[3] = textBox4;
+            combo = comboBox1;
+            Giris.yonetici.Ekle(texts,combo);
+
+            bilgilendirme.textBox1.Text = "Veri Eklendi";
             bilgilendirme.ShowDialog();
             this.Close();
-        }
+        }   
     }
 }

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace BayrakBilmece
 {
-    public partial class BilgilendirmeSilindi : Form
+    public partial class Bilgilendirme : Form
     {
-        public BilgilendirmeSilindi()
+        public Bilgilendirme()
         {
             InitializeComponent();
         }

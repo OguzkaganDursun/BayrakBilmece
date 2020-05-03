@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
+
 
 namespace BayrakBilmece
 {
     public partial class Duzenle : Form
     {
+        OleDbConnection baglanti =new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public Duzenle()
         {
             InitializeComponent();
@@ -24,7 +27,31 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            BilgilendirmeKaydedildi bilgilendirme = new BilgilendirmeKaydedildi();
+            Guncelle();
+        }
+
+        private void Guncelle()
+        {          
+            try
+            {
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("update ulke_bilgileri set Isim='" + textBox2.Text + "',Baskent='" + textBox3.Text + "',Nufus='" + textBox4.Text + "',Kita='" + comboBox1.Text + "' where Id=" + Convert.ToInt32(textBox1.Text), baglanti);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                //MessageBox.Show("İşlem Tamam");
+                Bilgilendirme();              
+            }
+            catch (Exception aciklama)
+            {
+                MessageBox.Show(aciklama.Message,"İşlem başarısız");
+                baglanti.Close();
+            }
+        }
+        private void Bilgilendirme()
+        {
+            Giris.yonetici.KayitlariListele();
+            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            bilgilendirme.textBox1.Text = "Veri Güncellendi";
             bilgilendirme.ShowDialog();
             this.Close();
         }

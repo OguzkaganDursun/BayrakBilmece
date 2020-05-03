@@ -14,6 +14,7 @@ namespace BayrakBilmece
     public partial class Yonetici : Form
     {
         OleDbConnection baglanti =new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
+        
         public Yonetici()
         {
             InitializeComponent();
@@ -22,6 +23,7 @@ namespace BayrakBilmece
         private void button1_Click(object sender, EventArgs e)
         {
             Ekle ekle = new Ekle();
+            IdGetir(ekle.textBox1);
             ekle.ShowDialog();
         }
 
@@ -41,7 +43,9 @@ namespace BayrakBilmece
 
         private void button3_Click(object sender, EventArgs e)
         {
-            BilgilendirmeSilindi bilgilendirme = new BilgilendirmeSilindi();
+            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            bilgilendirme.textBox1.Text = "Veri Silindi";
+            bilgilendirme.textBox1.ForeColor = Color.Red;
             bilgilendirme.ShowDialog();
         }
 
@@ -51,7 +55,7 @@ namespace BayrakBilmece
             anaMenu.Show();
             this.Close();
         }
-        private void KayitlariListele()
+        public void KayitlariListele()
         {
             try
             {
@@ -68,25 +72,46 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-
-        private void Yonetici_Load(object sender, EventArgs e)
+        public void IdGetir(TextBox text)
+        {
+            try
+            {
+                int id = 1;
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri", baglanti);
+                OleDbDataReader oku = komut.ExecuteReader();
+                while (oku.Read())
+                {
+                    id++;
+                }
+                text.Text = id.ToString();
+                baglanti.Close();
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message, "işlem Başarısız");
+                baglanti.Close();
+            }
+        }
+        public void Yonetici_Load(object sender, EventArgs e)
         {
             KayitlariListele();
+            DataGridView dataGrid = new DataGridView();
+            dataGrid = dataGridView1;
         }
-        private void Ekle()
+        public void Ekle(TextBox[] texts,ComboBox combo)
         {
             try
             {
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(id,kita,isim,baskent,nufus) values(18,'Asya','İran','Tahran','83M')", baglanti);
+                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(Id,Kita,Isim,Baskent,Nufus) values('"+texts[0].Text.ToString()+ "','" + combo.Text.ToString() + "','" + texts[1].Text.ToString() + "','" + texts[2].Text.ToString() + "','" + texts[3].Text.ToString() + "')", baglanti);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
-                MessageBox.Show("Ülke Eklendi");
-                KayitlariListele();
             }
             catch (Exception acikla)
             {
                 MessageBox.Show(acikla.Message, "Ülke Eklenemedi");
+                baglanti.Close();
             }
         }
         private void Verileriyerlestir(TextBox[] text, ComboBox combo)
@@ -103,10 +128,10 @@ namespace BayrakBilmece
                     oku.Read();
                 }
                 text[0].Text = oku[0].ToString();
-                text[1].Text = oku[1].ToString();
-                text[2].Text = oku[2].ToString();
-                text[3].Text = oku[3].ToString();
-                combo.Text = oku[4].ToString();
+                text[1].Text = oku[2].ToString();
+                text[2].Text = oku[3].ToString();
+                text[3].Text = oku[4].ToString();
+                combo.Text = oku[1].ToString();
                 baglanti.Close();
             }
             catch (Exception acikla)

@@ -58,11 +58,11 @@
     <Compile Include="Ayarlar.Designer.cs">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </Compile>
-    <Compile Include="BilgilendirmeKaydedildi.cs">
+    <Compile Include="Bilgilendirme.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="BilgilendirmeKaydedildi.Designer.cs">
-      <DependentUpon>BilgilendirmeKaydedildi.cs</DependentUpon>
+    <Compile Include="Bilgilendirme.Designer.cs">
+      <DependentUpon>Bilgilendirme.cs</DependentUpon>
     </Compile>
     <Compile Include="Cevap.cs">
       <SubType>Form</SubType>
@@ -132,20 +132,14 @@
     <Compile Include="Yonetici.Designer.cs">
       <DependentUpon>Yonetici.cs</DependentUpon>
     </Compile>
-    <Compile Include="BilgilendirmeSilindi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="BilgilendirmeSilindi.Designer.cs">
-      <DependentUpon>BilgilendirmeSilindi.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="AnaMenu.resx">
       <DependentUpon>AnaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Ayarlar.resx">
       <DependentUpon>Ayarlar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="BilgilendirmeKaydedildi.resx">
-      <DependentUpon>BilgilendirmeKaydedildi.cs</DependentUpon>
+    <EmbeddedResource Include="Bilgilendirme.resx">
+      <DependentUpon>Bilgilendirme.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Cevap.resx">
       <DependentUpon>Cevap.cs</DependentUpon>
@@ -188,9 +182,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Yonetici.resx">
       <DependentUpon>Yonetici.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="BilgilendirmeSilindi.resx">
-      <DependentUpon>BilgilendirmeSilindi.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
