@@ -97,12 +97,14 @@ namespace BayrakBilmece
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Ayarlar ayarlar = new Ayarlar();
+            ayarlar.button1.Text = "Geri Dön";
             ayarlar.ShowDialog();
-            ayarlar.button1.Text = "Oğuz";
+            
         }
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            Application.Exit ();
             this.Close();
         }
 
