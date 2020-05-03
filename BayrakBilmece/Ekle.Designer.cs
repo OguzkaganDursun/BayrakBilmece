@@ -268,21 +268,21 @@
         }
 
         #endregion
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.RichTextBox richTextBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.RichTextBox richTextBox3;
-        private System.Windows.Forms.RichTextBox richTextBox2;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         public System.Windows.Forms.GroupBox groupBox1;
         public System.Windows.Forms.Label label1;
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Button button2;
         public System.Windows.Forms.Button button1;
+        public System.Windows.Forms.ComboBox comboBox1;
+        public System.Windows.Forms.RichTextBox richTextBox4;
+        public System.Windows.Forms.Label label7;
+        public System.Windows.Forms.Label label6;
+        public System.Windows.Forms.RichTextBox richTextBox3;
+        public System.Windows.Forms.RichTextBox richTextBox2;
+        public System.Windows.Forms.Label label5;
+        public System.Windows.Forms.RichTextBox richTextBox1;
+        public System.Windows.Forms.Label label4;
+        public System.Windows.Forms.Label label3;
     }
 }
