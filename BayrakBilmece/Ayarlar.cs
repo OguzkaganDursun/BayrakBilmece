@@ -21,5 +21,7 @@ namespace BayrakBilmece
         {
             this.Close();
         }
+
+
     }
 }
