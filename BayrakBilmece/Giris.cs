@@ -16,7 +16,7 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-        public static string isimGirisi;
+        
 
         int nokta = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -80,6 +80,7 @@ namespace BayrakBilmece
             PanelGotur(panel3);
             PanelGetir(panel6);
         }
+        public static string isimGirisi;
         public static AnaMenu anaMenu = new AnaMenu();
         public static Yonetici yonetici = new Yonetici();
         private void button7_Click(object sender, EventArgs e)
