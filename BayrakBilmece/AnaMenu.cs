@@ -15,8 +15,7 @@ namespace BayrakBilmece
         public AnaMenu()
         {
             InitializeComponent();
-        }
-        
+        }      
         private void button1_Click(object sender, EventArgs e)
         {
             OyunAyari oyunAyari = new OyunAyari();

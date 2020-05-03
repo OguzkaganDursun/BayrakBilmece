@@ -16,7 +16,7 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-        
+
 
         int nokta = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -32,14 +32,14 @@ namespace BayrakBilmece
             {
                 timer1.Stop();
                 timer2.Stop();
-                PanelGotur(panel2);             
+                PanelGotur(panel2);
                 PanelGetir(panel3);
                 PanelGetir2(panel5);
-            }     
+            }
         }
 
         private void timer2_Tick(object sender, EventArgs e)
-        {          
+        {
             if (progressBar1.Value < 100)
             {
                 nokta++;
@@ -52,13 +52,13 @@ namespace BayrakBilmece
                 {
                     nokta = 0;
                     label2.Text = "Oyun Yükleniyor";
-                }                   
+                }
             }
         }
-        
+
         public void PanelGetir(Panel panel)
         {
-            panel.Location = new Point(0,220);
+            panel.Location = new Point(0, 220);
         }
         public void PanelGetir2(Panel panel)
         {
@@ -85,9 +85,19 @@ namespace BayrakBilmece
         public static Yonetici yonetici = new Yonetici();
         private void button7_Click(object sender, EventArgs e)
         {
-            isimGirisi = textBox1.Text;             
-            anaMenu.Show();
-            this.Hide();
+            isimGirisi = textBox1.Text;
+            if (textBox1.Text == "İsim" || textBox1.Text == "" || textBox1.Text == " " || textBox1.Text == "  ")
+            {
+                Uyari uyari = new Uyari();
+                uyari.textBox1.Text = "Lütfen Bir İsim Giriniz !";
+                uyari.ShowDialog();
+            }
+            else
+            {
+                anaMenu.Show();
+                this.Hide();
+            }            
+            
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -16,7 +16,10 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-
+        public void karakterSec(Image resim)
+        {
+            pictureBox1.Image = resim;
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
