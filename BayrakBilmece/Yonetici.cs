@@ -43,12 +43,13 @@ namespace BayrakBilmece
 
         private void button3_Click(object sender, EventArgs e)
         {
-
-            Bilgilendirme bilgilendirme = new Bilgilendirme();
-            bilgilendirme.textBox1.Text = "Veri Silindi";
-            bilgilendirme.textBox1.ForeColor = Color.Red;
-            KayitSil();
-            bilgilendirme.ShowDialog();
+            SilOnay silOnay = new SilOnay();
+            silOnay.ShowDialog();
+            //Bilgilendirme bilgilendirme = new Bilgilendirme();
+            //bilgilendirme.textBox1.Text = "Veri Silindi";
+            //bilgilendirme.textBox1.ForeColor = Color.Red;
+           // KayitSil();
+            //bilgilendirme.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -158,7 +159,7 @@ namespace BayrakBilmece
             }
             catch (Exception acikla)
             {
-                MessageBox.Show(acikla.Message, "işlem Başarısız");
+                MessageBox.Show(acikla.Message, "Islem Başarısız");
                 baglanti.Close();
             }
             IdSirala();
