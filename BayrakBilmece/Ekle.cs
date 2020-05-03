@@ -24,7 +24,7 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            BilgilendirmeKaydedildi bilgilendirme = new BilgilendirmeKaydedildi();
             bilgilendirme.ShowDialog();
             this.Close();
         }
