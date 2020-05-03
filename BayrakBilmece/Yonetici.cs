@@ -28,6 +28,7 @@ namespace BayrakBilmece
         private void button2_Click(object sender, EventArgs e)
         {
             Duzenle duzenle = new Duzenle();
+            duzenle.richTextBox1.Text = "Merhaba";
             duzenle.ShowDialog();
         }
 
