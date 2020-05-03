@@ -24,11 +24,11 @@ namespace BayrakBilmece
             try
             {
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri values(16,'Asya','İran','Tahran','83M')", baglanti);
+                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(id,kita,isim,baskent,nufus) values(18,'Asya','İran','Tahran','83M')", baglanti);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
                 MessageBox.Show("Ülke Eklendi");
-                
+                KayitlariListele();
             }
             catch (Exception acikla)
             {
@@ -70,6 +70,7 @@ namespace BayrakBilmece
             catch (Exception aciklama)
             {
                 MessageBox.Show(aciklama.Message, "Veriler Listelenemedi!");
+                baglanti.Close();
             }
         }
 
