@@ -51,8 +51,8 @@ namespace BayrakBilmece
 
         private void button4_Click(object sender, EventArgs e)
         {
-            AnaMenu anaMenu = new AnaMenu();
-            anaMenu.Show();
+            Giris giris = new Giris();
+            giris.Show();
             this.Close();
         }
         public void KayitlariListele()
@@ -141,5 +141,9 @@ namespace BayrakBilmece
             }
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            KayitlariListele();
+        }
     }
 }
