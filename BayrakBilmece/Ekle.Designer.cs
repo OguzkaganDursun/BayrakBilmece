@@ -74,6 +74,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(188, 20);
             this.textBox4.TabIndex = 18;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
@@ -81,6 +82,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(188, 20);
             this.textBox3.TabIndex = 17;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
@@ -88,6 +90,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(188, 20);
             this.textBox2.TabIndex = 16;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
             // 
@@ -96,6 +99,7 @@
             this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(188, 20);
             this.textBox1.TabIndex = 13;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox1
             // 
@@ -113,7 +117,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 21);
             this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "Seçiniz";
+            this.comboBox1.Text = "Afrika";
             // 
             // label7
             // 

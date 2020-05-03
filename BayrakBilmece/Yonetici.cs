@@ -43,13 +43,11 @@ namespace BayrakBilmece
 
         private void button3_Click(object sender, EventArgs e)
         {
-            SilOnay silOnay = new SilOnay();
-            silOnay.ShowDialog();
-            //Bilgilendirme bilgilendirme = new Bilgilendirme();
-            //bilgilendirme.textBox1.Text = "Veri Silindi";
-            //bilgilendirme.textBox1.ForeColor = Color.Red;
-           // KayitSil();
-            //bilgilendirme.ShowDialog();
+            Bilgilendirme bilgilendirme = new Bilgilendirme();
+            bilgilendirme.textBox1.Text = "Veri Silindi";
+            bilgilendirme.textBox1.ForeColor = Color.Red;
+            KayitSil();
+            bilgilendirme.ShowDialog();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -147,6 +145,7 @@ namespace BayrakBilmece
 
         public void KayitSil()
         {
+
             try
             {
                 int id = 0;

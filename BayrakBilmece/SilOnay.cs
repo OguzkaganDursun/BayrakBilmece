@@ -26,11 +26,9 @@ namespace BayrakBilmece
         {
             Bilgilendirme bilgilendirme = new Bilgilendirme();
             bilgilendirme.textBox1.Text = "Veri Silindi";
-            bilgilendirme.textBox1.ForeColor = Color.Red;
-            Giris.yonetici.KayitSil();
+            bilgilendirme.textBox1.ForeColor = Color.Red;                
             bilgilendirme.ShowDialog();
-            this.Close();
-            
-        }
+            this.Close();          
+        }  
     }
 }

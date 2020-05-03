@@ -81,32 +81,46 @@
             // 
             // textBox4
             // 
+            this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox4.Location = new System.Drawing.Point(6, 167);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(188, 20);
+            this.textBox4.Size = new System.Drawing.Size(188, 19);
             this.textBox4.TabIndex = 18;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox3
             // 
+            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox3.Location = new System.Drawing.Point(6, 122);
             this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(188, 20);
+            this.textBox3.Size = new System.Drawing.Size(188, 19);
             this.textBox3.TabIndex = 17;
+            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox2
             // 
+            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox2.Location = new System.Drawing.Point(6, 78);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(188, 20);
+            this.textBox2.Size = new System.Drawing.Size(188, 19);
             this.textBox2.TabIndex = 16;
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // textBox1
             // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Enabled = false;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox1.Location = new System.Drawing.Point(6, 34);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(188, 20);
+            this.textBox1.Size = new System.Drawing.Size(188, 19);
             this.textBox1.TabIndex = 14;
+            this.textBox1.TabStop = false;
+            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // comboBox1
             // 
@@ -124,7 +138,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 21);
             this.comboBox1.TabIndex = 15;
-            this.comboBox1.Text = "Seçiniz";
+            this.comboBox1.Text = "Afrika";
             // 
             // label7
             // 
