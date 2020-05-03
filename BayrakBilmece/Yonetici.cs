@@ -20,22 +20,9 @@ namespace BayrakBilmece
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {          
-            try
-            {
-                baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(id,kita,isim,baskent,nufus) values(18,'Asya','İran','Tahran','83M')", baglanti);
-                komut.ExecuteNonQuery();
-                baglanti.Close();
-                MessageBox.Show("Ülke Eklendi");
-                KayitlariListele();
-            }
-            catch (Exception acikla)
-            {
-                MessageBox.Show(acikla.Message,"Ülke Eklenemedi");
-            }
-            //Ekle ekle = new Ekle();
-            //ekle.ShowDialog();
+        {
+            Ekle ekle = new Ekle();
+            ekle.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -77,6 +64,22 @@ namespace BayrakBilmece
         private void Yonetici_Load(object sender, EventArgs e)
         {
             KayitlariListele();
+        }
+        private void Ekle()
+        {
+            try
+            {
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(id,kita,isim,baskent,nufus) values(18,'Asya','İran','Tahran','83M')", baglanti);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                MessageBox.Show("Ülke Eklendi");
+                KayitlariListele();
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message, "Ülke Eklenemedi");
+            }
         }
     }
 }
