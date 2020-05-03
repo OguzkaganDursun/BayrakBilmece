@@ -104,5 +104,10 @@ namespace BayrakBilmece
         {
             this.Close();
         }
+
+        private void textBox1_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+        }
     }
 }
