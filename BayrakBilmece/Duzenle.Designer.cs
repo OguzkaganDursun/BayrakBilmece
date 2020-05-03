@@ -85,11 +85,12 @@
             this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
-            "Avrupa",
-            "Asya",
             "Afrika",
+            "Asya",
+            "Avrupa",
+            "Güney Amerika",
             "Kuzey Amerika",
-            "Güney Amerika"});
+            "Okyanusya"});
             this.comboBox1.Location = new System.Drawing.Point(6, 209);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(188, 21);
