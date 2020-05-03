@@ -16,6 +16,7 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        public static string isimGirisi;
 
         int nokta = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -82,7 +83,8 @@ namespace BayrakBilmece
         public static AnaMenu anaMenu = new AnaMenu();
         public static Yonetici yonetici = new Yonetici();
         private void button7_Click(object sender, EventArgs e)
-        {                     
+        {
+            isimGirisi = textBox1.Text;             
             anaMenu.Show();
             this.Hide();
         }

@@ -40,5 +40,10 @@ namespace BayrakBilmece
             KarakterSecimi karakterSecimi = new KarakterSecimi();
             karakterSecimi.ShowDialog();
         }
+
+        private void AnaMenu_Load(object sender, EventArgs e)
+        {
+            label2.Text = Giris.isimGirisi;
+        }
     }
 }
