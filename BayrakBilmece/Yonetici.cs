@@ -43,9 +43,11 @@ namespace BayrakBilmece
 
         private void button3_Click(object sender, EventArgs e)
         {
+
             Bilgilendirme bilgilendirme = new Bilgilendirme();
             bilgilendirme.textBox1.Text = "Veri Silindi";
             bilgilendirme.textBox1.ForeColor = Color.Red;
+            KayitSil();
             bilgilendirme.ShowDialog();
         }
 
@@ -142,9 +144,58 @@ namespace BayrakBilmece
             }
         }
 
+        public void KayitSil()
+        {
+            try
+            {
+                int id = 0;
+                id =Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value) ;
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("delete from ulke_bilgileri where Id="+id, baglanti);
+                komut.ExecuteNonQuery();
+                baglanti.Close();
+                
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message, "işlem Başarısız");
+                baglanti.Close();
+            }
+            IdSirala();
+        }
+        
+        
+        public void IdSirala()
+        {
+            TextBox text1 = new TextBox();
+            IdGetir(text1);
+            int id = Convert.ToInt32(text1.Text)-1;
+
+            try
+            {
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("select Id from ulke_bilgileri", baglanti);
+                OleDbDataReader oku = komut.ExecuteReader();
+                for (int a = 1; a <= id; a++)
+                {
+                    oku.Read();
+                    OleDbCommand komut1 = new OleDbCommand("update ulke_bilgileri set Id=" + a + " where Id=" + oku[0], baglanti);
+                    komut1.ExecuteNonQuery();
+                }
+                baglanti.Close();
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message, "işlem Başarısız");
+                baglanti.Close();
+            }
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             KayitlariListele();
+            IdGetir(textBox1);
+            textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
         }
     }
 }
