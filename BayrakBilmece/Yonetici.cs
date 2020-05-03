@@ -28,7 +28,14 @@ namespace BayrakBilmece
         private void button2_Click(object sender, EventArgs e)
         {
             Duzenle duzenle = new Duzenle();
-            duzenle.richTextBox1.Text = "Merhaba";
+            //duzenle.textBox1.Text = dataGridView1.CurrentRow.Index.ToString();
+            TextBox[] texts = new TextBox[4];
+            texts[0] = duzenle.textBox1;
+            texts[1] = duzenle.textBox2;
+            texts[2] = duzenle.textBox3;
+            texts[3] = duzenle.textBox4;
+            ComboBox combo = duzenle.comboBox1;
+            Verileriyerlestir(texts,combo);
             duzenle.ShowDialog();
         }
 
@@ -82,5 +89,32 @@ namespace BayrakBilmece
                 MessageBox.Show(acikla.Message, "Ülke Eklenemedi");
             }
         }
+        private void Verileriyerlestir(TextBox[] text, ComboBox combo)
+        {
+            try
+            {
+                baglanti.Open();
+                int id = 0;
+                id = dataGridView1.CurrentRow.Index;
+                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri", baglanti);
+                OleDbDataReader oku = komut.ExecuteReader();
+                for (int a=0;a<=id;a++)
+                {
+                    oku.Read();
+                }
+                text[0].Text = oku[0].ToString();
+                text[1].Text = oku[1].ToString();
+                text[2].Text = oku[2].ToString();
+                text[3].Text = oku[3].ToString();
+                combo.Text = oku[4].ToString();
+                baglanti.Close();
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message,"işlem Başarısız");
+                baglanti.Close();
+            }
+        }
+
     }
 }
