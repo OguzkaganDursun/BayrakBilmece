@@ -96,8 +96,9 @@ namespace BayrakBilmece
         public void Yonetici_Load(object sender, EventArgs e)
         {
             KayitlariListele();
-            DataGridView dataGrid = new DataGridView();
-            dataGrid = dataGridView1;
+            
+            IdGetir(textBox1);
+            textBox1.Text = (Convert.ToInt32(textBox1.Text)-1).ToString();
         }
         public void Ekle(TextBox[] texts,ComboBox combo)
         {
