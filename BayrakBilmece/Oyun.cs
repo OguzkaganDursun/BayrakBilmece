@@ -16,5 +16,16 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        PictureBox pictureBox = new PictureBox();
+        Label label = new Label();
+        private void Oyun_Load(object sender, EventArgs e)
+        {           
+            pictureBox = Giris.anaMenu.pictureBox1;            
+            label = Giris.anaMenu.label2;
+            pictureBox1.BackgroundImage = pictureBox.BackgroundImage;
+            label2.Text = label.Text;
+            label = Giris.anaMenu.label3;
+            label4.Text = label.Text;
+        }
     }
 }
