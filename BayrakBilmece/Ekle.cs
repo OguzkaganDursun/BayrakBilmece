@@ -24,24 +24,29 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Bilgilendirme bilgilendirme = new Bilgilendirme();
-            TextBox[] texts = new TextBox[4];
-            ComboBox combo = new ComboBox();
-            texts[0]= textBox1;
-            texts[1] = textBox2;
-            texts[2] = textBox3;
-            texts[3] = textBox4;
-            combo = comboBox1;
-            Giris.yonetici.Ekle(texts,combo);
 
-            bilgilendirme.textBox1.Text = "Veri Eklendi";
-            bilgilendirme.ShowDialog();
-            this.Close();
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-            textBox1.ForeColor = Color.Snow;
+            
+            if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            {
+                TextBox[] texts = new TextBox[4];
+                ComboBox combo = new ComboBox();
+                texts[0] = textBox1;
+                texts[1] = textBox2;
+                texts[2] = textBox3;
+                texts[3] = textBox4;
+                combo = comboBox1;
+                Giris.yonetici.Ekle(texts, combo);
+                Bilgilendirme bilgilendirme = new Bilgilendirme();
+                bilgilendirme.textBox1.Text = "Veri Eklendi";
+                bilgilendirme.ShowDialog();
+                this.Close();
+            }
+            else
+            {
+                Uyari uyari = new Uyari();
+                uyari.textBox1.Text = "Lütfen Bütün Alanları Doldurunuz";
+                uyari.ShowDialog();
+            }
         }
     }
 }

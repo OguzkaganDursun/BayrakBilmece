@@ -65,12 +65,11 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.Location = new System.Drawing.Point(12, 54);
-            this.textBox1.Multiline = true;
+            this.textBox1.Location = new System.Drawing.Point(9, 58);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(176, 33);
+            this.textBox1.Size = new System.Drawing.Size(180, 14);
             this.textBox1.TabIndex = 3;
             this.textBox1.Text = "Uyarı Mesajı";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;

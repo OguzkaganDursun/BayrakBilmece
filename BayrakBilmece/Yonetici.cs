@@ -25,12 +25,12 @@ namespace BayrakBilmece
             Ekle ekle = new Ekle();
             IdGetir(ekle.textBox1);
             ekle.ShowDialog();
+            KayitlariListele();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Duzenle duzenle = new Duzenle();
-            //duzenle.textBox1.Text = dataGridView1.CurrentRow.Index.ToString();
             TextBox[] texts = new TextBox[4];
             texts[0] = duzenle.textBox1;
             texts[1] = duzenle.textBox2;
@@ -39,15 +39,13 @@ namespace BayrakBilmece
             ComboBox combo = duzenle.comboBox1;
             Verileriyerlestir(texts,combo);
             duzenle.ShowDialog();
+            KayitlariListele();
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            Bilgilendirme bilgilendirme = new Bilgilendirme();
-            bilgilendirme.textBox1.Text = "Veri Silindi";
-            bilgilendirme.textBox1.ForeColor = Color.Red;
-            KayitSil();
-            bilgilendirme.ShowDialog();
+        {            
+            KayitSil();          
+            KayitlariListele();            
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -60,12 +58,14 @@ namespace BayrakBilmece
         {
             try
             {
+                IdSirala();
                 baglanti.Open();
                 OleDbDataAdapter liste = new OleDbDataAdapter("select *from ulke_bilgileri", baglanti);
                 DataSet dsHafiza = new DataSet();
                 liste.Fill(dsHafiza);
                 dataGridView1.DataSource = dsHafiza.Tables[0];
                 baglanti.Close();
+                //MessageBox.Show("kayıt listele çalıştı!");               
             }
             catch (Exception aciklama)
             {
@@ -96,8 +96,7 @@ namespace BayrakBilmece
         }
         public void Yonetici_Load(object sender, EventArgs e)
         {
-            KayitlariListele();
-            
+            KayitlariListele();          
             IdGetir(textBox1);
             textBox1.Text = (Convert.ToInt32(textBox1.Text)-1).ToString();
         }
@@ -153,15 +152,18 @@ namespace BayrakBilmece
                 baglanti.Open();
                 OleDbCommand komut = new OleDbCommand("delete from ulke_bilgileri where Id="+id, baglanti);
                 komut.ExecuteNonQuery();
-                baglanti.Close();
-                
+                baglanti.Close();                
+                Bilgilendirme bilgilendirme = new Bilgilendirme();
+                bilgilendirme.textBox1.Text = "Veri Silindi";
+                bilgilendirme.textBox1.ForeColor = Color.Red;
+                bilgilendirme.ShowDialog();
             }
             catch (Exception acikla)
             {
                 MessageBox.Show(acikla.Message, "Islem Başarısız");
                 baglanti.Close();
-            }
-            IdSirala();
+            }          
+            //KayitlariListele();           
         }
         
         
@@ -183,6 +185,7 @@ namespace BayrakBilmece
                     komut1.ExecuteNonQuery();
                 }
                 baglanti.Close();
+                //MessageBox.Show("Id Sırala çalıştı");
             }
             catch (Exception acikla)
             {
