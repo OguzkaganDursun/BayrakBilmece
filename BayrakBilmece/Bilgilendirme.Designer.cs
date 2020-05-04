@@ -88,7 +88,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Bilgilendirme";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "BilgilendirmeKaydedildi";
+            this.Text = "Bilgilendirme";
             this.ResumeLayout(false);
             this.PerformLayout();
 
