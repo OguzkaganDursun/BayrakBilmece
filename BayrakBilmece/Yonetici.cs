@@ -108,8 +108,16 @@ namespace BayrakBilmece
         {
             try
             {
+                string dosyaYolu;
+                dosyaYolu = pictureBox.ImageLocation;
+                string uygulamaYolu;
+                uygulamaYolu = Application.StartupPath;
+                int yolUzunlugu;
+                yolUzunlugu = uygulamaYolu.Length;
+                dosyaYolu = dosyaYolu.Remove(0, yolUzunlugu);
+
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(Id,Kita,Isim,Baskent,Nufus,Bayrak) values('"+texts[0].Text.ToString()+ "','" + combo.Text.ToString() + "','" + texts[1].Text.ToString() + "','" + texts[2].Text.ToString() + "','" + texts[3].Text.ToString() + "','"+pictureBox.ImageLocation+"')", baglanti);
+                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(Id,Kita,Isim,Baskent,Nufus,Bayrak) values('"+texts[0].Text.ToString()+ "','" + combo.Text.ToString() + "','" + texts[1].Text.ToString() + "','" + texts[2].Text.ToString() + "','" + texts[3].Text.ToString() + "','"+dosyaYolu+"')", baglanti);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
             }
@@ -136,7 +144,7 @@ namespace BayrakBilmece
                 text[1].Text = oku[2].ToString();
                 text[2].Text = oku[3].ToString();
                 text[3].Text = oku[4].ToString();
-                pictureBox.ImageLocation = oku[5].ToString();
+                pictureBox.ImageLocation = Application.StartupPath + oku[5].ToString();
                 combo.Text = oku[1].ToString();                
                 baglanti.Close();
             }

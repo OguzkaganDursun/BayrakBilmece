@@ -53,8 +53,8 @@ namespace BayrakBilmece
         {
             openFileDialog1.Title = "Bayrak Seçiniz!";
             openFileDialog1.Filter = "Png(*.png)|*.png";
-            openFileDialog1.ShowDialog();
-            pictureBox1.ImageLocation = openFileDialog1.FileName;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
         }
     }
 }
