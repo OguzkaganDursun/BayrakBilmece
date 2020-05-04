@@ -26,7 +26,7 @@ namespace BayrakBilmece
         {
 
             
-            if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != "")
+            if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&&pictureBox1.ImageLocation!=null)
             {
                 TextBox[] texts = new TextBox[4];
                 ComboBox combo = new ComboBox();
@@ -35,7 +35,7 @@ namespace BayrakBilmece
                 texts[2] = textBox3;
                 texts[3] = textBox4;
                 combo = comboBox1;
-                Giris.yonetici.Ekle(texts, combo);
+                Giris.yonetici.Ekle(texts, combo,pictureBox1);
                 Bilgilendirme bilgilendirme = new Bilgilendirme();
                 bilgilendirme.textBox1.Text = "Veri Eklendi";
                 bilgilendirme.ShowDialog();
@@ -47,6 +47,14 @@ namespace BayrakBilmece
                 uyari.textBox1.Text = "Lütfen Bütün Alanları Doldurunuz";
                 uyari.ShowDialog();
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "Bayrak Seçiniz!";
+            openFileDialog1.Filter = "Png(*.png)|*.png";
+            openFileDialog1.ShowDialog();
+            pictureBox1.ImageLocation = openFileDialog1.FileName;
         }
     }
 }

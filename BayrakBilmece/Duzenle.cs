@@ -35,7 +35,7 @@ namespace BayrakBilmece
             try
             {
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("update ulke_bilgileri set Isim='" + textBox2.Text + "',Baskent='" + textBox3.Text + "',Nufus='" + textBox4.Text + "',Kita='" + comboBox1.Text + "' where Id=" + Convert.ToInt32(textBox1.Text), baglanti);
+                OleDbCommand komut = new OleDbCommand("update ulke_bilgileri set Isim='" + textBox2.Text + "',Baskent='" + textBox3.Text + "',Nufus='" + textBox4.Text + "',Kita='" + comboBox1.Text + "',Bayrak='"+openFileDialog1.FileName+"' where Id=" + Convert.ToInt32(textBox1.Text), baglanti);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
                 //MessageBox.Show("İşlem Tamam");
@@ -54,6 +54,15 @@ namespace BayrakBilmece
             bilgilendirme.textBox1.Text = "Veri Güncellendi";
             bilgilendirme.ShowDialog();
             this.Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            openFileDialog1.Title = "Bayrak Seçiniz!";
+            openFileDialog1.FileName = textBox2.Text;
+            openFileDialog1.Filter = "Png(*.png)|*.png";
+            openFileDialog1.ShowDialog();
+            pictureBox1.ImageLocation = openFileDialog1.FileName;
         }
     }
 }

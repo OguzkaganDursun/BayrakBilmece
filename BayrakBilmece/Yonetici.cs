@@ -14,10 +14,15 @@ namespace BayrakBilmece
     public partial class Yonetici : Form
     {
         OleDbConnection baglanti =new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
-        
         public Yonetici()
         {
             InitializeComponent();
+        }
+        public void Yonetici_Load(object sender, EventArgs e)
+        {
+            KayitlariListele();
+            IdGetir(textBox1);
+            textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -31,13 +36,15 @@ namespace BayrakBilmece
         private void button2_Click(object sender, EventArgs e)
         {
             Duzenle duzenle = new Duzenle();
-            TextBox[] texts = new TextBox[4];
+            TextBox[] texts = new TextBox[5];
+            PictureBox pictureBox = new PictureBox();
             texts[0] = duzenle.textBox1;
             texts[1] = duzenle.textBox2;
             texts[2] = duzenle.textBox3;
-            texts[3] = duzenle.textBox4;
+            texts[3] = duzenle.textBox4;          
             ComboBox combo = duzenle.comboBox1;
-            Verileriyerlestir(texts,combo);
+            pictureBox = duzenle.pictureBox1;
+            Verileriyerlestir(texts,combo,pictureBox);
             duzenle.ShowDialog();
             KayitlariListele();
         }
@@ -65,13 +72,15 @@ namespace BayrakBilmece
                 liste.Fill(dsHafiza);
                 dataGridView1.DataSource = dsHafiza.Tables[0];
                 baglanti.Close();
-                //MessageBox.Show("kayıt listele çalıştı!");               
+                //MessageBox.Show("kayıt listele çalıştı!");    
             }
             catch (Exception aciklama)
             {
                 MessageBox.Show(aciklama.Message, "Veriler Listelenemedi!");
                 baglanti.Close();
             }
+            IdGetir(textBox1);
+            textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
         }
         public void IdGetir(TextBox text)
         {
@@ -94,18 +103,13 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-        public void Yonetici_Load(object sender, EventArgs e)
-        {
-            KayitlariListele();          
-            IdGetir(textBox1);
-            textBox1.Text = (Convert.ToInt32(textBox1.Text)-1).ToString();
-        }
-        public void Ekle(TextBox[] texts,ComboBox combo)
+        
+        public void Ekle(TextBox[] texts,ComboBox combo,PictureBox pictureBox)
         {
             try
             {
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(Id,Kita,Isim,Baskent,Nufus) values('"+texts[0].Text.ToString()+ "','" + combo.Text.ToString() + "','" + texts[1].Text.ToString() + "','" + texts[2].Text.ToString() + "','" + texts[3].Text.ToString() + "')", baglanti);
+                OleDbCommand komut = new OleDbCommand("insert into ulke_bilgileri(Id,Kita,Isim,Baskent,Nufus,Bayrak) values('"+texts[0].Text.ToString()+ "','" + combo.Text.ToString() + "','" + texts[1].Text.ToString() + "','" + texts[2].Text.ToString() + "','" + texts[3].Text.ToString() + "','"+pictureBox.ImageLocation+"')", baglanti);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
             }
@@ -115,7 +119,7 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-        private void Verileriyerlestir(TextBox[] text, ComboBox combo)
+        private void Verileriyerlestir(TextBox[] text, ComboBox combo,PictureBox pictureBox)
         {
             try
             {
@@ -132,12 +136,13 @@ namespace BayrakBilmece
                 text[1].Text = oku[2].ToString();
                 text[2].Text = oku[3].ToString();
                 text[3].Text = oku[4].ToString();
-                combo.Text = oku[1].ToString();
+                pictureBox.ImageLocation = oku[5].ToString();
+                combo.Text = oku[1].ToString();                
                 baglanti.Close();
             }
             catch (Exception acikla)
             {
-                MessageBox.Show(acikla.Message,"işlem Başarısız");
+                MessageBox.Show(acikla.Message,"Veri yerleştirme Başarısız");
                 baglanti.Close();
             }
         }
@@ -194,11 +199,11 @@ namespace BayrakBilmece
             }
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            KayitlariListele();
-            IdGetir(textBox1);
-            textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
-        }
+        //private void button5_Click(object sender, EventArgs e)
+        //{
+        //    KayitlariListele();
+        //    IdGetir(textBox1);
+        //    textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
+        //}
     }
 }
