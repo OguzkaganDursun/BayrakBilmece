@@ -207,6 +207,11 @@ namespace BayrakBilmece
             }
         }
 
+        private void Yonetici_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         //private void button5_Click(object sender, EventArgs e)
         //{
         //    KayitlariListele();

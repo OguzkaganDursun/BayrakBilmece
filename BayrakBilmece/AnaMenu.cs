@@ -44,5 +44,10 @@ namespace BayrakBilmece
         {
             label2.Text = Giris.isimGirisi;
         }
+
+        private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

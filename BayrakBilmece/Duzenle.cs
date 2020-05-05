@@ -70,5 +70,19 @@ namespace BayrakBilmece
             yolUzunlugu = uygulamaYolu.Length;
             dosyaYolu = dosyaYolu.Remove(0,yolUzunlugu);
         }
+
+        private void Duzenle_Load(object sender, EventArgs e)
+        {
+            dosyaYolu = pictureBox1.ImageLocation;
+            DosyaYolu();
+        }
+        public void DosyaYolu()
+        {
+            string uygulamaYolu;
+            uygulamaYolu = Application.StartupPath;
+            int yolUzunlugu;
+            yolUzunlugu = uygulamaYolu.Length;
+            dosyaYolu = dosyaYolu.Remove(0, yolUzunlugu);
+        }
     }
 }
