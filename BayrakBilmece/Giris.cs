@@ -81,6 +81,7 @@ namespace BayrakBilmece
             PanelGetir(panel6);
         }
         public static string isimGirisi;
+        public static string yoneticiSifre;
         public static AnaMenu anaMenu = new AnaMenu();
         public static Yonetici yonetici = new Yonetici();
         private void button7_Click(object sender, EventArgs e)
@@ -102,9 +103,20 @@ namespace BayrakBilmece
 
         private void button5_Click(object sender, EventArgs e)
         {
-            Yonetici yonetici = new Yonetici();
-            yonetici.Show();
-            this.Hide();
+            yoneticiSifre = textBox2.Text;
+            if (textBox2.Text == "9799")
+            {
+                Yonetici yonetici = new Yonetici();
+                yonetici.Show();
+                this.Hide();
+            }
+            else if (textBox2.Text != "9799")
+            {
+                Uyari uyari = new Uyari();
+                uyari.textBox1.Text = "Hatalı Giriş Yaptınız !";
+                uyari.ShowDialog();
+            }
+           
         }
 
         private void pictureBox4_Click(object sender, EventArgs e)

@@ -61,6 +61,10 @@ namespace BayrakBilmece
             giris.Show();
             this.Close();
         }
+        public void boyutAyarla()
+        {
+            this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
         public void KayitlariListele()
         {
             try
@@ -71,12 +75,14 @@ namespace BayrakBilmece
                 DataSet dsHafiza = new DataSet();
                 liste.Fill(dsHafiza);
                 dataGridView1.DataSource = dsHafiza.Tables[0];
+                boyutAyarla();
                 baglanti.Close();
                 //MessageBox.Show("kayıt listele çalıştı!");    
             }
             catch (Exception aciklama)
             {
                 MessageBox.Show(aciklama.Message, "Veriler Listelenemedi!");
+                boyutAyarla();
                 baglanti.Close();
             }
             IdGetir(textBox1);
