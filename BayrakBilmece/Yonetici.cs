@@ -64,6 +64,7 @@ namespace BayrakBilmece
         public void boyutAyarla()
         {
             this.dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.RowHeadersVisible = false;
         }
         public void KayitlariListele()
         {
@@ -213,10 +214,10 @@ namespace BayrakBilmece
             }
         }
 
-        private void Yonetici_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
-        }
+        //private void Yonetici_FormClosed(object sender, FormClosedEventArgs e)
+        //{
+        //    Application.Exit();
+        //}
 
         //private void button5_Click(object sender, EventArgs e)
         //{

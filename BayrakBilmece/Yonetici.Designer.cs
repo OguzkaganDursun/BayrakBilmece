@@ -199,7 +199,7 @@
             this.Name = "Yonetici";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bayrak Bilmece";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Yonetici_FormClosed);
+            //this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Yonetici_FormClosed);
             this.Load += new System.EventHandler(this.Yonetici_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

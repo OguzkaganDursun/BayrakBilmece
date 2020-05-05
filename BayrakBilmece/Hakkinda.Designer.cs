@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Hakkinda));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -44,7 +45,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -76,14 +76,32 @@
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
             // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.textBox1.ForeColor = System.Drawing.Color.Snow;
+            this.textBox1.HideSelection = false;
+            this.textBox1.Location = new System.Drawing.Point(96, 46);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
+            this.textBox1.ShortcutsEnabled = false;
+            this.textBox1.Size = new System.Drawing.Size(268, 47);
+            this.textBox1.TabIndex = 4;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Ülkeler hakkında bilgi kazanabileceğiniz ve\r\noynarken keyif alabileceğiniz bir oy" +
+    "un olarak tasarlanmıştır.";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label2.Font = new System.Drawing.Font("Arial", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label2.ForeColor = System.Drawing.Color.Snow;
             this.label2.Location = new System.Drawing.Point(93, 16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(110, 17);
+            this.label2.Size = new System.Drawing.Size(117, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "Bayrak Bilmece";
             // 
@@ -137,15 +155,15 @@
             this.textBox2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox2.ForeColor = System.Drawing.Color.Snow;
             this.textBox2.HideSelection = false;
-            this.textBox2.Location = new System.Drawing.Point(96, 52);
+            this.textBox2.Location = new System.Drawing.Point(96, 56);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
             this.textBox2.ReadOnly = true;
             this.textBox2.ShortcutsEnabled = false;
-            this.textBox2.Size = new System.Drawing.Size(268, 48);
+            this.textBox2.Size = new System.Drawing.Size(268, 32);
             this.textBox2.TabIndex = 3;
             this.textBox2.TabStop = false;
-            this.textBox2.Text = "Bayrak\r\nBilmece\r\nOyunu\r\nv.1.1.1\r\n";
+            this.textBox2.Text = "İstanbul Üniversitesi - Cerrahpaşa\r\nBilgisayar Programcılığı Öğrencisi";
             // 
             // label4
             // 
@@ -202,15 +220,15 @@
             this.textBox3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.textBox3.ForeColor = System.Drawing.Color.Snow;
             this.textBox3.HideSelection = false;
-            this.textBox3.Location = new System.Drawing.Point(96, 52);
+            this.textBox3.Location = new System.Drawing.Point(96, 56);
             this.textBox3.Multiline = true;
             this.textBox3.Name = "textBox3";
             this.textBox3.ReadOnly = true;
             this.textBox3.ShortcutsEnabled = false;
-            this.textBox3.Size = new System.Drawing.Size(268, 48);
+            this.textBox3.Size = new System.Drawing.Size(268, 32);
             this.textBox3.TabIndex = 4;
             this.textBox3.TabStop = false;
-            this.textBox3.Text = "Bayrak\r\nBilmece\r\nOyunu\r\nv.1.1.1\r\n";
+            this.textBox3.Text = "İstanbul Üniversitesi - Cerrahpaşa\r\nBilgisayar Programcılığı Öğrencisi";
             // 
             // label6
             // 
@@ -246,23 +264,6 @@
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 0;
             this.pictureBox3.TabStop = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.textBox1.ForeColor = System.Drawing.Color.Snow;
-            this.textBox1.HideSelection = false;
-            this.textBox1.Location = new System.Drawing.Point(96, 45);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ReadOnly = true;
-            this.textBox1.ShortcutsEnabled = false;
-            this.textBox1.Size = new System.Drawing.Size(268, 48);
-            this.textBox1.TabIndex = 4;
-            this.textBox1.TabStop = false;
-            this.textBox1.Text = "bayrak\r\nbilmece\r\noyunu\r\nv.1.1.1\r\n";
             // 
             // Hakkinda
             // 
