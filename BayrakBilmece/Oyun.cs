@@ -319,5 +319,55 @@ namespace BayrakBilmece
             cevap.label1.ForeColor = Color.Red;
             cevap.ShowDialog();
         }
+
+        private void pictureBox5_MouseHover(object sender, EventArgs e)
+        {
+            this.pictureBox5.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBox6_MouseHover(object sender, EventArgs e)
+        {
+            this.pictureBox6.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBox7_MouseHover(object sender, EventArgs e)
+        {
+            this.pictureBox7.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBox8_MouseHover(object sender, EventArgs e)
+        {
+            this.pictureBox8.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBox9_MouseHover(object sender, EventArgs e)
+        {
+            this.pictureBox9.BorderStyle = BorderStyle.Fixed3D;
+        }
+
+        private void pictureBox5_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox5.BorderStyle = BorderStyle.None;
+        }
+
+        private void pictureBox6_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox6.BorderStyle = BorderStyle.None;
+        }
+
+        private void pictureBox7_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox7.BorderStyle = BorderStyle.None;
+        }
+
+        private void pictureBox8_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox8.BorderStyle = BorderStyle.None;
+        }
+
+        private void pictureBox9_MouseLeave(object sender, EventArgs e)
+        {
+            this.pictureBox9.BorderStyle = BorderStyle.None;
+        }
     }
 }
