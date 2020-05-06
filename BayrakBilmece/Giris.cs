@@ -110,7 +110,7 @@ namespace BayrakBilmece
                 yonetici.Show();
                 this.Hide();
             }
-            else if (textBox2.Text != "9799")
+            else 
             {
                 Uyari uyari = new Uyari();
                 uyari.textBox1.Text = "Hatalı Giriş Yaptınız !";
@@ -137,5 +137,6 @@ namespace BayrakBilmece
         {
             textBox1.Clear();
         }
+
     }
 }

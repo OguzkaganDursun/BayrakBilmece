@@ -219,11 +219,5 @@ namespace BayrakBilmece
         //    Application.Exit();
         //}
 
-        //private void button5_Click(object sender, EventArgs e)
-        //{
-        //    KayitlariListele();
-        //    IdGetir(textBox1);
-        //    textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
-        //}
     }
 }

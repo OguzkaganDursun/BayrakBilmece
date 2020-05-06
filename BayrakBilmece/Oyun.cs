@@ -18,6 +18,12 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        public int dogruCevap=0;
+        public int[] secilenPicBoxlar=new int[5];
+        public int picSirasi = 0;
+        int ulkeNo;
+        string bayrakYolu;
+
         PictureBox pictureBox = new PictureBox();
         Label label = new Label();
         int toplamKayitSayi=0;
@@ -31,9 +37,10 @@ namespace BayrakBilmece
             label = Giris.anaMenu.label3;
             label4.Text = label.Text;
 
-            //toplamKayitSayi = ToplamKayitSayisi();
-            //MessageBox.Show(toplamKayitSayi.ToString());
-            SoruHazirla();
+            
+            RastgeleUlkeSec();
+            BosBayraklaraAtama();
+
         }
         public int ToplamKayitSayisi()
         {         
@@ -54,13 +61,13 @@ namespace BayrakBilmece
             return toplamKayitSayi;
         }
 
-        public void SoruHazirla()
+        public void SoruHazirla(string isim,string baskent,string nufus)
         {
             Random rastgele = new Random();
             int salla,ipucu;
             int[] dizilerim = new int[3];
             int a = 0;
-            ipucu = rastgele.Next(1,4);
+            ipucu = rastgele.Next(2,4);
             
             for (int i = 0; i < ipucu; i++)
             {
@@ -83,15 +90,161 @@ namespace BayrakBilmece
             for (int i=0;i< ipucu; i++)
             {
                 if (dizilerim[i] == 1)
-                    soruMetni += "İsmi " + "isimDeğişkeni";
+                    soruMetni += "İsmi " + isim;
                 if (dizilerim[i] == 2)
-                    soruMetni += "Başkent " + "baskentDeğişkeni";
+                    soruMetni += "Başkent " + baskent;
                 if (dizilerim[i] == 3)
-                    soruMetni += "Nüfus " + "nufusDeğişkeni";
+                    soruMetni += "Nüfus " + nufus;
                 if((i+1)<ipucu)
                     soruMetni += " ve ";
             }
+            soruMetni += " olan ülke?";
             textBox2.Text = soruMetni;
+        }
+        public void RastgeleUlkeSec()
+        {
+            Random rstSayi=new Random();
+            int kayıtSayisi = ToplamKayitSayisi();
+            int secilenUlke;
+            int secilenPicBox;
+            secilenPicBox = rstSayi.Next(1,6);
+            secilenUlke = rstSayi.Next(1,kayıtSayisi);
+            try
+            {
+                int id = 1;
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri", baglanti);
+                OleDbDataReader oku = komut.ExecuteReader();
+                while (id <= secilenUlke)
+                {
+                    oku.Read();
+                    id++;
+                }
+
+                if (dogruCevap == 0)
+                {
+                    dogruCevap = secilenPicBox;
+                    secilenPicBoxlar[secilenPicBox-1] = Convert.ToInt32(oku[0]);
+                    BayrakResmiYerlestir(secilenPicBox, oku[5].ToString());
+                    SoruHazirla(oku[2].ToString(), oku[3].ToString(), oku[4].ToString());
+                }
+                else
+                {
+                    secilenPicBoxlar[picSirasi] = secilenPicBox;
+                    BayrakResmiYerlestir(secilenPicBox, oku[5].ToString());
+                }              
+                baglanti.Close();
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message, "Ülke Seçilemedi!");
+                baglanti.Close();
+            }
+        }
+
+        public void BayrakResmiYerlestir(int sayi,string bayrakKonumu)
+        {
+                if (sayi == 1 && pictureBox5.ImageLocation == null)
+                    pictureBox5.ImageLocation = Application.StartupPath + bayrakKonumu;
+                if (sayi == 2 && pictureBox6.ImageLocation == null)
+                    pictureBox6.ImageLocation = Application.StartupPath + bayrakKonumu;
+                if (sayi == 3 && pictureBox7.ImageLocation == null)
+                    pictureBox7.ImageLocation = Application.StartupPath + bayrakKonumu;
+                if (sayi == 4 && pictureBox8.ImageLocation == null)
+                    pictureBox8.ImageLocation = Application.StartupPath + bayrakKonumu;
+                if (sayi == 5 && pictureBox9.ImageLocation == null)
+                    pictureBox9.ImageLocation = Application.StartupPath + bayrakKonumu;
+                if (sayi == 0 || sayi > 5)
+                    MessageBox.Show("Hata " + sayi);
+        }
+
+        public void BosBayraklaraAtama()
+        {                  
+            for (int i=1;i<6;i++)
+            {
+                UlkeSec();
+                int b = 0;
+                for (int a = 0; a < 5; a++)
+                {
+                    if (ulkeNo == secilenPicBoxlar[a])
+                        b++;
+                }
+                if (b == 0)
+                {
+                    secilenPicBoxlar[i-1]=ulkeNo;
+                    BayrakResmiYerlestir(i,bayrakYolu);
+                }
+                else
+                    i--;
+            }
+            
+        }
+        public void UlkeSec()
+        {
+            Random rstSayi = new Random();
+            int kayıtSayisi = ToplamKayitSayisi();
+            int secilenUlke;
+            secilenUlke = rstSayi.Next(1, kayıtSayisi);
+            try
+            {
+                int id = 1;
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri", baglanti);
+                OleDbDataReader oku = komut.ExecuteReader();
+                while (id <= secilenUlke)
+                {
+                    oku.Read();
+                    id++;
+                }
+                ulkeNo = Convert.ToInt32(oku[0]);
+                bayrakYolu = oku[5].ToString();
+                baglanti.Close();
+            }
+            catch (Exception acikla)
+            {
+                MessageBox.Show(acikla.Message, "Ülke Seçilemedi!");
+                baglanti.Close();
+            }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+            if (dogruCevap == 1)
+                MessageBox.Show("Doğru Cevap!");
+            else
+                MessageBox.Show("Yanlış Cevap!");
+        }
+
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+            if (dogruCevap == 2)
+                MessageBox.Show("Doğru Cevap!");
+            else
+                MessageBox.Show("Yanlış Cevap!");
+        }
+
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
+            if (dogruCevap == 3)
+                MessageBox.Show("Doğru Cevap!");
+            else
+                MessageBox.Show("Yanlış Cevap!");
+        }
+
+        private void pictureBox8_Click(object sender, EventArgs e)
+        {
+            if (dogruCevap == 4)
+                MessageBox.Show("Doğru Cevap!");
+            else
+                MessageBox.Show("Yanlış Cevap!");
+        }
+
+        private void pictureBox9_Click(object sender, EventArgs e)
+        {
+            if (dogruCevap == 5)
+                MessageBox.Show("Doğru Cevap!");
+            else
+                MessageBox.Show("Yanlış Cevap!");
         }
     }
 }
