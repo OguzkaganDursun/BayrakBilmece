@@ -19,6 +19,7 @@ namespace BayrakBilmece
             InitializeComponent();
         }
         public int dogruCevap=0;
+        public string dogruCevapBayrakYolu;
         public int[] secilenPicBoxlar=new int[5];
         public int picSirasi = 0;
         int ulkeNo;
@@ -90,11 +91,11 @@ namespace BayrakBilmece
             for (int i=0;i< ipucu; i++)
             {
                 if (dizilerim[i] == 1)
-                    soruMetni += "İsmi " + isim;
+                    soruMetni += "İsmi '" + isim + "'";
                 if (dizilerim[i] == 2)
-                    soruMetni += "Başkent " + baskent;
+                    soruMetni += "Başkent '" + baskent + "'";
                 if (dizilerim[i] == 3)
-                    soruMetni += "Nüfus " + nufus;
+                    soruMetni += "Nüfus '" + nufus + "'";
                 if((i+1)<ipucu)
                     soruMetni += " ve ";
             }
@@ -124,6 +125,7 @@ namespace BayrakBilmece
                 if (dogruCevap == 0)
                 {
                     dogruCevap = secilenPicBox;
+                    dogruCevapBayrakYolu= oku[5].ToString();
                     secilenPicBoxlar[secilenPicBox-1] = Convert.ToInt32(oku[0]);
                     BayrakResmiYerlestir(secilenPicBox, oku[5].ToString());
                     SoruHazirla(oku[2].ToString(), oku[3].ToString(), oku[4].ToString());
@@ -210,41 +212,112 @@ namespace BayrakBilmece
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 1)
-                MessageBox.Show("Doğru Cevap!");
+            {
+                DogruCevap();
+                SoruyuYenile();
+            }
             else
-                MessageBox.Show("Yanlış Cevap!");
+            {
+                YanlisCevap();
+                SoruyuYenile();
+            }              
         }
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 2)
-                MessageBox.Show("Doğru Cevap!");
+            {
+                DogruCevap();
+                SoruyuYenile();
+            }
             else
-                MessageBox.Show("Yanlış Cevap!");
+            {
+                YanlisCevap();
+                SoruyuYenile();
+            }
         }
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 3)
-                MessageBox.Show("Doğru Cevap!");
+            {
+                DogruCevap();
+                SoruyuYenile();
+            }
             else
-                MessageBox.Show("Yanlış Cevap!");
+            {
+                YanlisCevap();
+                SoruyuYenile();
+            }
         }
 
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 4)
-                MessageBox.Show("Doğru Cevap!");
+            {
+                DogruCevap();
+                SoruyuYenile();
+            }
             else
-                MessageBox.Show("Yanlış Cevap!");
+            {
+                YanlisCevap();
+                SoruyuYenile();
+            }
         }
 
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 5)
-                MessageBox.Show("Doğru Cevap!");
+            {
+                DogruCevap();
+                SoruyuYenile();
+            }
             else
-                MessageBox.Show("Yanlış Cevap!");
+            {
+                YanlisCevap();
+                SoruyuYenile();
+            }
+        }
+
+        public void SoruyuYenile()
+        {
+            dogruCevap = 0;
+            dogruCevapBayrakYolu="";
+            secilenPicBoxlar[0] = 0;
+            secilenPicBoxlar[1] = 0;
+            secilenPicBoxlar[2] = 0;
+            secilenPicBoxlar[3] = 0;
+            secilenPicBoxlar[4] = 0;
+            picSirasi = 0;
+            ulkeNo=0;
+            bayrakYolu="";
+            toplamKayitSayi = 0;
+            soruMetni="";            
+            pictureBox5.ImageLocation = null;
+            pictureBox6.ImageLocation = null;
+            pictureBox7.ImageLocation = null;
+            pictureBox8.ImageLocation = null;
+            pictureBox9.ImageLocation = null;
+            RastgeleUlkeSec();
+            BosBayraklaraAtama();
+
+        }
+        public void DogruCevap()
+        {
+            Cevap cevap = new Cevap();
+            cevap.pictureBox1.ImageLocation = Application.StartupPath + dogruCevapBayrakYolu;
+            cevap.label1.Text = "Tebrikler";
+            cevap.label1.ForeColor = Color.Gold;
+            cevap.label1.Location = new Point((cevap.Width-cevap.label1.Width)/2,cevap.label1.Location.Y);
+            cevap.ShowDialog();
+        }
+        public void YanlisCevap()
+        {
+            Cevap cevap = new Cevap();
+            cevap.pictureBox1.ImageLocation = Application.StartupPath + dogruCevapBayrakYolu;
+            cevap.label1.Text = "Yanlış";
+            cevap.label1.ForeColor = Color.Red;
+            cevap.ShowDialog();
         }
     }
 }
