@@ -369,5 +369,16 @@ namespace BayrakBilmece
         {
             this.pictureBox9.BorderStyle = BorderStyle.None;
         }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            int yuzde;
+
+            if (progressBar1.Value < 100)
+            {
+                yuzde = progressBar1.Value += 100 / 20;                
+            }
+          
+        }
     }
 }
