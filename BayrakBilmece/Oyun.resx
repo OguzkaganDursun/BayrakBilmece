@@ -196,7 +196,7 @@
         hBLg+lDQw6wg0Eyi+BIZtBAM3rHSWEGQAL+D0uEadJx3l2fP/g9bXVsRY29UfgAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kalp2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOYAAADHCAYAAAANmi8oAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EgAACxIB0t1+/AAAExFJREFUeF7t3Wua61h1xvEagkcAJk2HhE6CQ5NAJEgcEgiQAEXInZA4CbdALkVG
@@ -283,7 +283,7 @@
         I76tjsMZaoByhlZAuRNg7gCTIDmcsQc454DJS50g5ubm/wE3cRTUuu79ewAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kalp3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOYAAADHCAYAAAANmi8oAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EgAACxIB0t1+/AAAExFJREFUeF7t3Wua61h1xvEagkcAJk2HhE6CQ5NAJEgcEgiQAEXInZA4CbdALkVG
@@ -370,7 +370,7 @@
         I76tjsMZaoByhlZAuRNg7gCTIDmcsQc454DJS50g5ubm/wE3cRTUuu79ewAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kalp4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOYAAADHCAYAAAANmi8oAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EgAACxIB0t1+/AAAExFJREFUeF7t3Wua61h1xvEagkcAJk2HhE6CQ5NAJEgcEgiQAEXInZA4CbdALkVG
@@ -607,7 +607,7 @@
         s2bRtifZlcAcbfuw0cLZCyWppz6s4aKzGDBH27b3/tfUNH8B3MU2a3PMqmoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="pictureBox10.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kalp1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAOYAAADHCAYAAAANmi8oAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         EgAACxIB0t1+/AAAExFJREFUeF7t3Wua61h1xvEagkcAJk2HhE6CQ5NAJEgcEgiQAEXInZA4CbdALkVG
