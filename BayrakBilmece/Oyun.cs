@@ -18,30 +18,37 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        public int oyuncuToplamPuani=0;
+        public int oyunSuresi = 10000;
+        public int oyunSuresiSiniri = 9000;
+
+
         public int dogruCevap=0;
         public string dogruCevapBayrakYolu;
         public int[] secilenPicBoxlar=new int[5];
         public int picSirasi = 0;
         int ulkeNo;
         string bayrakYolu;
+        public int puan = 0;
+        public int hak=4;
+        public int bilinenSoruSayisi = 0;
 
         PictureBox pictureBox = new PictureBox();
         Label label = new Label();
         int toplamKayitSayi=0;
         string soruMetni;
         private void Oyun_Load(object sender, EventArgs e)
-        {           
+        {
             pictureBox = Giris.anaMenu.pictureBox1;            
             label = Giris.anaMenu.label2;
             pictureBox1.BackgroundImage = pictureBox.BackgroundImage;
             label2.Text = label.Text;
-            label = Giris.anaMenu.label3;
-            label4.Text = label.Text;
+            oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;
+            label4.Text = oyuncuToplamPuani+" XP";           
 
-            
             RastgeleUlkeSec();
             BosBayraklaraAtama();
-
+            progressBar1.Maximum = oyunSuresi;
         }
         public int ToplamKayitSayisi()
         {         
@@ -300,7 +307,6 @@ namespace BayrakBilmece
             pictureBox9.ImageLocation = null;
             RastgeleUlkeSec();
             BosBayraklaraAtama();
-
         }
         public void DogruCevap()
         {
@@ -309,7 +315,15 @@ namespace BayrakBilmece
             cevap.label1.Text = "Tebrikler";
             cevap.label1.ForeColor = Color.Gold;
             cevap.label1.Location = new Point((cevap.Width-cevap.label1.Width)/2,cevap.label1.Location.Y);
+            timer1.Stop();
             cevap.ShowDialog();
+            puan += 100;
+            bilinenSoruSayisi++;
+            label3.Text = puan + " XP";
+            label3.Location = new Point((this.Width-label3.Width)/2,label3.Location.Y);
+            SureyiAzalt();
+            progressBar1.Value = 0;
+            timer1.Start();
         }
         public void YanlisCevap()
         {
@@ -317,9 +331,73 @@ namespace BayrakBilmece
             cevap.pictureBox1.ImageLocation = Application.StartupPath + dogruCevapBayrakYolu;
             cevap.label1.Text = "Yanlış";
             cevap.label1.ForeColor = Color.Red;
+            timer1.Stop();
             cevap.ShowDialog();
+            progressBar1.Value = 0;
+            
+            if (hak > 0)
+            {
+                hak--;
+                OyuncuHakki(hak);
+                if (hak == 0)
+                {
+                    Sonuc sonuc = new Sonuc();
+                    OyuncuBilgileriniSonucaGonder(sonuc);                   
+                    sonuc.ShowDialog();
+                }
+            }
+            timer1.Start();
+        }
+        public void OyuncuHakki(int hak2)
+        {
+            if (hak2 == 3)
+                kalp1.Visible = false;
+            if (hak2 == 2)
+                kalp2.Visible = false;
+            if (hak2 == 1)
+                kalp3.Visible = false;
+            if (hak2 == 0)
+                kalp4.Visible = false;
+            else if(hak2>3||hak2<0)
+                MessageBox.Show("Hata Geçerli hak sayısı Değil! "+hak2);
+        }
+        public void OyuncuBilgileriniSonucaGonder(Sonuc sonuc2)
+        {
+            
+            sonuc2.pictureBox1.BackgroundImage = pictureBox1.BackgroundImage;
+            sonuc2.label2.Text = label2.Text;
+            sonuc2.label2.Location = new Point((sonuc2.Width-sonuc2.label2.Width)/2,sonuc2.label2.Location.Y);
+            sonuc2.label7.Text = (oyuncuToplamPuani + puan) + " XP";
+            sonuc2.label7.Location = new Point((sonuc2.groupBox1.Width - sonuc2.label7.Width) / 2, sonuc2.label7.Location.Y);
+            sonuc2.label8.Text = "+" + puan;
+            sonuc2.label8.Location = new Point((sonuc2.groupBox1.Width - sonuc2.label8.Width) / 2, sonuc2.label8.Location.Y);
+            sonuc2.label9.Text = bilinenSoruSayisi.ToString();
+            sonuc2.label9.Location = new Point((sonuc2.groupBox1.Width - sonuc2.label9.Width) / 2, sonuc2.label9.Location.Y);
         }
 
+        public void  YenidenOyna()
+        {
+            label4.Text = (oyuncuToplamPuani + puan) + " XP";
+            puan = 0;
+            hak = 4;
+            bilinenSoruSayisi = 0;
+            kalp1.Visible = true;
+            kalp2.Visible = true;
+            kalp3.Visible = true;
+            kalp4.Visible = true;
+            label3.Text = puan + " XP";        
+            progressBar1.Value = 0;
+            timer1.Start();
+        }
+        public void SureyiAzalt()
+        {
+            if (bilinenSoruSayisi%4==0 && oyunSuresi != oyunSuresiSiniri)
+            {
+                oyunSuresi -= 500;
+                progressBar1.Maximum = oyunSuresi;
+                MessageBox.Show("Bilinen Soru Sayısı = "+bilinenSoruSayisi+"\nOyun Süresi = "+oyunSuresi);
+            }
+        }
         private void pictureBox5_MouseHover(object sender, EventArgs e)
         {
             this.pictureBox5.BorderStyle = BorderStyle.Fixed3D;
@@ -372,13 +450,19 @@ namespace BayrakBilmece
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            int yuzde;
-
-            if (progressBar1.Value < 100)
+            if (progressBar1.Value < oyunSuresi)
             {
-                yuzde = progressBar1.Value += 100 / 20;                
+                progressBar1.Value += 50;
             }
-          
+            else
+            {
+                timer1.Stop();
+                Sonuc sonuc = new Sonuc();
+                OyuncuBilgileriniSonucaGonder(sonuc);               
+                sonuc.ShowDialog();
+            }
         }
+
+
     }
 }

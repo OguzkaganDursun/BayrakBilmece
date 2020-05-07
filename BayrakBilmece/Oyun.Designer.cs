@@ -220,11 +220,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.label1.ForeColor = System.Drawing.Color.Snow;
-            this.label1.Location = new System.Drawing.Point(604, 20);
+            this.label1.Location = new System.Drawing.Point(599, 20);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(105, 24);
+            this.label1.Size = new System.Drawing.Size(114, 24);
             this.label1.TabIndex = 23;
-            this.label1.Text = "Kalan Hak";
+            this.label1.Text = "Can Sayısı";
             // 
             // kalp1
             // 
@@ -240,7 +240,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
-            this.timer1.Interval = 1000;
+            this.timer1.Interval = 50;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // progressBar1
@@ -248,6 +248,7 @@
             this.progressBar1.ForeColor = System.Drawing.Color.OrangeRed;
             this.progressBar1.Location = new System.Drawing.Point(0, 90);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
+            this.progressBar1.Maximum = 10000;
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(784, 15);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
@@ -314,17 +315,17 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.PictureBox pictureBox9;
-        internal System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox textBox2;
         public System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.PictureBox kalp2;
         public System.Windows.Forms.PictureBox kalp3;
         public System.Windows.Forms.PictureBox kalp4;
         public System.Windows.Forms.PictureBox kalp1;
+        public System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.Timer timer1;
     }
 }

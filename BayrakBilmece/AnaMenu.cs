@@ -15,7 +15,8 @@ namespace BayrakBilmece
         public AnaMenu()
         {
             InitializeComponent();
-        }      
+        }
+        public int oyuncuToplamPuani=3000;
         private void button1_Click(object sender, EventArgs e)
         {
             OyunAyari oyunAyari = new OyunAyari();
@@ -43,11 +44,13 @@ namespace BayrakBilmece
         private void AnaMenu_Load(object sender, EventArgs e)
         {
             label2.Text = Giris.isimGirisi;
+            label3.Text = oyuncuToplamPuani+" XP";
         }
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
+
     }
 }

@@ -16,5 +16,21 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            Giris.anaMenu.label3.Text = label7.Text;
+            Giris.anaMenu.oyuncuToplamPuani = OyunAyari.oyun.oyuncuToplamPuani + OyunAyari.oyun.puan;
+            Giris.anaMenu.Show();
+            OyunAyari.oyun.Hide();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OyunAyari.oyun.YenidenOyna();
+            this.Close();
+        }
     }
 }

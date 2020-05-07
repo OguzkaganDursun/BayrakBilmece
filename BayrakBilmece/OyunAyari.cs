@@ -16,7 +16,7 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-
+        public static Oyun oyun = new Oyun();
         private void button2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -24,7 +24,7 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Oyun oyun = new Oyun();
+            oyun.YenidenOyna();
             oyun.Show();
             this.Close();
             Giris.anaMenu.Hide();
