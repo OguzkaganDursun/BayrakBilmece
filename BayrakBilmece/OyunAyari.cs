@@ -24,17 +24,17 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkBox1.Checked == true)
+            if (checkBox1.Checked)
                 oyun.kitalar[0] = "Afrika";
-            if (checkBox2.Checked == true)
+            if (checkBox2.Checked)
                 oyun.kitalar[1] = "Asya";
-            if (checkBox3.Checked == true)
+            if (checkBox3.Checked)
                 oyun.kitalar[2] = "Avrupa";
-            if (checkBox4.Checked == true)
+            if (checkBox4.Checked)
                 oyun.kitalar[3] = "Güney Amerika";
-            if (checkBox5.Checked == true)
+            if (checkBox5.Checked)
                 oyun.kitalar[4] = "Kuzey Amerika";
-            if (checkBox6.Checked == true)
+            if (checkBox6.Checked)
                 oyun.kitalar[5] = "Okyanusya";
             oyun.YenidenOyna();
             oyun.Show();
