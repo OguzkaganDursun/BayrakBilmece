@@ -377,6 +377,7 @@ namespace BayrakBilmece
                 hak = 4;
                 oyunSuresi = 10000;
                 oyunSuresiSiniri = 8000;
+                progressBar1.Maximum = oyunSuresi;
             }              
             if (oyunZorlugu == "Orta")
             {
@@ -387,6 +388,7 @@ namespace BayrakBilmece
                 kalp4.Location = new Point(676, 48);
                 oyunSuresi = 8000;
                 oyunSuresiSiniri = 6000;
+                progressBar1.Maximum = oyunSuresi;
             }
             if (oyunZorlugu == "Zor")
             {
@@ -397,6 +399,7 @@ namespace BayrakBilmece
                 kalp4.Location = new Point(661, 48);
                 oyunSuresi = 6000;
                 oyunSuresiSiniri = 4000;
+                progressBar1.Maximum = oyunSuresi;
             }
             bilinenSoruSayisi = 0;
 

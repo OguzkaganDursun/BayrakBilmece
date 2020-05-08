@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.OleDb;
 
 namespace BayrakBilmece
 {
@@ -16,6 +17,8 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
+        public int karakterNo=0;
         PictureBox pictureBox = new PictureBox();
         PictureBox oncekiPictureBox = new PictureBox();
         public void KarakterSec(PictureBox karakter)
@@ -23,6 +26,24 @@ namespace BayrakBilmece
             pictureBox = Giris.anaMenu.pictureBox1;
             pictureBox.BackgroundImage = karakter.BackgroundImage;
         }
+        public void VeriTabaninaGonder()
+        {
+            try
+            {
+                baglanti.Open();
+                OleDbCommand komut = new OleDbCommand("update kullanicilar set Avatar='"+karakterNo+"' where Isim='"+Giris.anaMenu.label2.Text+"'", baglanti);
+                OleDbDataReader oku = komut.ExecuteReader();
+                oku.Read();
+                baglanti.Close();
+            }
+            catch (Exception aciklama)
+            {
+                MessageBox.Show(aciklama.Message, "Veri Tabanına Gönder Çalışmadı!");
+                baglanti.Close();
+            }
+        }
+
+
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -36,6 +57,8 @@ namespace BayrakBilmece
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             KarakterSec(pictureBox1);
+            karakterNo = 1;
+            VeriTabaninaGonder();
             if(oncekiPictureBox != null)
             {
                 oncekiPictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -47,6 +70,8 @@ namespace BayrakBilmece
         private void pictureBox2_Click(object sender, EventArgs e)
         {
             KarakterSec(pictureBox2);
+            karakterNo = 2;
+            VeriTabaninaGonder();
             if (oncekiPictureBox != null)
             {
                 oncekiPictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -58,6 +83,8 @@ namespace BayrakBilmece
         private void pictureBox3_Click(object sender, EventArgs e)
         {
             KarakterSec(pictureBox3);
+            karakterNo = 3;
+            VeriTabaninaGonder();
             if (oncekiPictureBox != null)
             {
                 oncekiPictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -68,7 +95,10 @@ namespace BayrakBilmece
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
+
             KarakterSec(pictureBox4);
+            karakterNo = 4;
+            VeriTabaninaGonder();
             if (oncekiPictureBox != null)
             {
                 oncekiPictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -80,6 +110,8 @@ namespace BayrakBilmece
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             KarakterSec(pictureBox5);
+            karakterNo = 5;
+            VeriTabaninaGonder();
             if (oncekiPictureBox != null)
             {
                 oncekiPictureBox.BorderStyle = BorderStyle.FixedSingle;
@@ -91,6 +123,8 @@ namespace BayrakBilmece
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             KarakterSec(pictureBox6);
+            karakterNo = 6;
+            VeriTabaninaGonder();
             if (oncekiPictureBox != null)
             {
                 oncekiPictureBox.BorderStyle = BorderStyle.FixedSingle;

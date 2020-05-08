@@ -245,7 +245,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
         public System.Windows.Forms.Label label8;
         public System.Windows.Forms.Label label7;
         public System.Windows.Forms.Label label6;
@@ -255,5 +254,6 @@
         public System.Windows.Forms.Label label2;
         public System.Windows.Forms.Label label9;
         public System.Windows.Forms.GroupBox groupBox1;
+        public System.Windows.Forms.Button button2;
     }
 }
