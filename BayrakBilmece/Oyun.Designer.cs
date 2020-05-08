@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Oyun));
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.kalp2 = new System.Windows.Forms.PictureBox();
             this.kalp3 = new System.Windows.Forms.PictureBox();
             this.kalp4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -43,12 +42,12 @@
             this.label4 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.kalp1 = new System.Windows.Forms.PictureBox();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.label3 = new System.Windows.Forms.Label();
+            this.kalp2 = new System.Windows.Forms.PictureBox();
+            this.kalp1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kalp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -56,6 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kalp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,17 +81,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 8;
             this.pictureBox1.TabStop = false;
-            // 
-            // kalp2
-            // 
-            this.kalp2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kalp2.BackgroundImage")));
-            this.kalp2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kalp2.Location = new System.Drawing.Point(622, 48);
-            this.kalp2.Name = "kalp2";
-            this.kalp2.Size = new System.Drawing.Size(30, 25);
-            this.kalp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.kalp2.TabIndex = 11;
-            this.kalp2.TabStop = false;
             // 
             // kalp3
             // 
@@ -226,17 +215,6 @@
             this.label1.TabIndex = 23;
             this.label1.Text = "Can Sayısı";
             // 
-            // kalp1
-            // 
-            this.kalp1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kalp1.BackgroundImage")));
-            this.kalp1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.kalp1.Location = new System.Drawing.Point(586, 47);
-            this.kalp1.Name = "kalp1";
-            this.kalp1.Size = new System.Drawing.Size(30, 25);
-            this.kalp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.kalp1.TabIndex = 24;
-            this.kalp1.TabStop = false;
-            // 
             // timer1
             // 
             this.timer1.Interval = 50;
@@ -263,6 +241,28 @@
             this.label3.Size = new System.Drawing.Size(85, 37);
             this.label3.TabIndex = 26;
             this.label3.Text = "0 XP";
+            // 
+            // kalp2
+            // 
+            this.kalp2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kalp2.BackgroundImage")));
+            this.kalp2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kalp2.Location = new System.Drawing.Point(622, 48);
+            this.kalp2.Name = "kalp2";
+            this.kalp2.Size = new System.Drawing.Size(30, 25);
+            this.kalp2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.kalp2.TabIndex = 11;
+            this.kalp2.TabStop = false;
+            // 
+            // kalp1
+            // 
+            this.kalp1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("kalp1.BackgroundImage")));
+            this.kalp1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.kalp1.Location = new System.Drawing.Point(586, 47);
+            this.kalp1.Name = "kalp1";
+            this.kalp1.Size = new System.Drawing.Size(30, 25);
+            this.kalp1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.kalp1.TabIndex = 24;
+            this.kalp1.TabStop = false;
             // 
             // Oyun
             // 
@@ -294,7 +294,6 @@
             this.Text = "Bayrak Bilmece";
             this.Load += new System.EventHandler(this.Oyun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.kalp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
@@ -302,6 +301,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kalp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -320,11 +320,11 @@
         public System.Windows.Forms.Label label1;
         private System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label label3;
-        public System.Windows.Forms.PictureBox kalp2;
         public System.Windows.Forms.PictureBox kalp3;
         public System.Windows.Forms.PictureBox kalp4;
-        public System.Windows.Forms.PictureBox kalp1;
         public System.Windows.Forms.PictureBox pictureBox1;
         public System.Windows.Forms.Timer timer1;
+        public System.Windows.Forms.PictureBox kalp2;
+        public System.Windows.Forms.PictureBox kalp1;
     }
 }

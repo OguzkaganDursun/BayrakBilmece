@@ -45,7 +45,7 @@ namespace BayrakBilmece
             }
             else
             {
-                
+                oyun.oyunZorlugu = comboBox1.Text;
                 oyun.YenidenOyna();
                 oyun.Show();
                 this.Close();

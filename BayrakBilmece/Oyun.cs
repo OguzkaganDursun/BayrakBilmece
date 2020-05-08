@@ -21,10 +21,11 @@ namespace BayrakBilmece
         //Oyun Ayarları Bilgileri
 
         public string[] kitalar = new string[6];
+        public string oyunZorlugu="Kolay";
         
         public int oyuncuToplamPuani=0;
-        public int oyunSuresi = 10000;
-        public int oyunSuresiSiniri = 9000;
+        public int oyunSuresi = 0;
+        public int oyunSuresiSiniri = 0;
 
         public int dogruCevap=0;
         public string dogruCevapBayrakYolu;
@@ -33,7 +34,7 @@ namespace BayrakBilmece
         int ulkeNo;
         string bayrakYolu;
         public int puan = 0;
-        public int hak=4;
+        public int hak=0;
         public int bilinenSoruSayisi = 0;
 
         PictureBox pictureBox = new PictureBox();
@@ -365,20 +366,48 @@ namespace BayrakBilmece
         }
         public void  YenidenOyna()
         {
-            label4.Text = (oyuncuToplamPuani) + " XP";
-            puan = 0;
-            hak = 4;
-            bilinenSoruSayisi = 0;
             kalp1.Visible = true;
             kalp2.Visible = true;
             kalp3.Visible = true;
             kalp4.Visible = true;
+            label4.Text = (oyuncuToplamPuani) + " XP";
+            puan = 0;
+            if (oyunZorlugu == "Kolay")
+            {
+                hak = 4;
+                oyunSuresi = 10000;
+                oyunSuresiSiniri = 8000;
+            }              
+            if (oyunZorlugu == "Orta")
+            {
+                hak = 3;
+                kalp1.Visible = false;
+                kalp2.Location = new Point(604, 48);
+                kalp3.Location = new Point(640, 48);
+                kalp4.Location = new Point(676, 48);
+                oyunSuresi = 8000;
+                oyunSuresiSiniri = 6000;
+            }
+            if (oyunZorlugu == "Zor")
+            {
+                hak = 2;
+                kalp1.Visible = false;
+                kalp2.Visible = false;
+                kalp3.Location = new Point(625, 48);
+                kalp4.Location = new Point(661, 48);
+                oyunSuresi = 6000;
+                oyunSuresiSiniri = 4000;
+            }
+            bilinenSoruSayisi = 0;
+
 
             pictureBox5.ImageLocation = null;
             pictureBox6.ImageLocation = null;
             pictureBox7.ImageLocation = null;
             pictureBox8.ImageLocation = null;
             pictureBox9.ImageLocation = null;
+
+            MessageBox.Show(oyunZorlugu+" "+oyunSuresi);
 
             SoruyuYenile();
 
