@@ -45,6 +45,7 @@ namespace BayrakBilmece
             }
             else
             {
+                
                 oyun.YenidenOyna();
                 oyun.Show();
                 this.Close();

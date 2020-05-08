@@ -17,13 +17,11 @@ namespace BayrakBilmece
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(OyunAyari.oyun.hak>0)
+                OyunAyari.oyun.SoruyuYenile();
             this.Close();
         }
     }
