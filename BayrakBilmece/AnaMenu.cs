@@ -16,7 +16,7 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-        public int oyuncuToplamPuani=3000;
+        public int oyuncuToplamPuani=0;
         private void button1_Click(object sender, EventArgs e)
         {
             OyunAyari oyunAyari = new OyunAyari();

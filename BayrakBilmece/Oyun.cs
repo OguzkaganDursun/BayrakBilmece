@@ -26,7 +26,6 @@ namespace BayrakBilmece
         public int oyunSuresi = 10000;
         public int oyunSuresiSiniri = 9000;
 
-
         public int dogruCevap=0;
         public string dogruCevapBayrakYolu;
         public int[] secilenPicBoxlar=new int[5];
@@ -52,13 +51,9 @@ namespace BayrakBilmece
             label2.Text = label.Text;
             oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;//Kullanıcı Toplam Puanı
             label4.Text = oyuncuToplamPuani+" XP";
-            //RastgeleUlkeSec();
-            //BosBayraklaraAtama();
             progressBar1.Maximum = oyunSuresi;
-            timer1.Enabled = true;
-            
+            timer1.Enabled = true;         
         }
-
         public int ToplamKayitSayisi()
         {
             try
@@ -68,8 +63,7 @@ namespace BayrakBilmece
                 OleDbDataReader oku = komut.ExecuteReader();
                 oku.Read();
                 toplamKayitSayi = Convert.ToInt32(oku[0]);
-                baglanti.Close();
-                
+                baglanti.Close();        
             }
             catch (Exception aciklama)
             {
@@ -78,26 +72,6 @@ namespace BayrakBilmece
             }
             return toplamKayitSayi;
         }
-
-        //public int ToplamKayitSayisi()
-        //{
-        //    try
-        //    {
-        //        baglanti.Open();
-        //        OleDbCommand komut = new OleDbCommand("select count(*) from ulke_bilgileri", baglanti);
-        //        OleDbDataReader oku = komut.ExecuteReader();
-        //        oku.Read();
-        //        toplamKayitSayi = Convert.ToInt32(oku[0]);
-        //        baglanti.Close();
-        //    }
-        //    catch (Exception aciklama)
-        //    {
-        //        MessageBox.Show(aciklama.Message, "toplam Kayıt çalışmadı");
-        //        baglanti.Close();
-        //    }
-        //    return toplamKayitSayi;
-        //}
-
         public void SoruHazirla(string isim,string baskent,string nufus)
         {
             Random rastgele = new Random();
@@ -176,7 +150,6 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-
         public void BayrakResmiYerlestir(int sayi,string bayrakKonumu)
         {
                 if (sayi == 1 && pictureBox5.ImageLocation == null)
@@ -192,7 +165,6 @@ namespace BayrakBilmece
                 if (sayi == 0 || sayi > 5)
                     MessageBox.Show("Hata " + sayi);
         }
-
         public void BosBayraklaraAtama()
         {
             for (int i = 1; i < 6; i++)
@@ -251,77 +223,61 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-
         private void pictureBox5_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 1)
             {
                 DogruCevap();
-                //SoruyuYenile();
             }
             else
             {
                 YanlisCevap();
-                //SoruyuYenile();
             }              
         }
-
         private void pictureBox6_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 2)
             {
                 DogruCevap();
-                //SoruyuYenile();
             }
             else
             {
                 YanlisCevap();
-                //SoruyuYenile();
             }
         }
-
         private void pictureBox7_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 3)
             {
                 DogruCevap();
-                //SoruyuYenile();
             }
             else
             {
                 YanlisCevap();
-                //SoruyuYenile();
             }
         }
-
         private void pictureBox8_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 4)
             {
                 DogruCevap();
-                //SoruyuYenile();
             }
             else
             {
                 YanlisCevap();
-                //SoruyuYenile();
             }
         }
-
         private void pictureBox9_Click(object sender, EventArgs e)
         {
             if (dogruCevap == 5)
             {
                 DogruCevap();
-                //SoruyuYenile();
             }
             else
             {
                 YanlisCevap();
-                //SoruyuYenile();
             }
         }
-
         public void SoruyuYenile()
         {
             dogruCevap = 0;
@@ -361,8 +317,6 @@ namespace BayrakBilmece
             label3.Text = puan + " XP";
             label3.Location = new Point((this.Width-label3.Width)/2,label3.Location.Y);
             SureyiAzalt();
-            //progressBar1.Value = 0;
-            //timer1.Start();
         }
         public void YanlisCevap()
         {
@@ -382,8 +336,7 @@ namespace BayrakBilmece
                 Sonuc sonuc = new Sonuc();
                 OyuncuBilgileriniSonucaGonder(sonuc);
                 sonuc.ShowDialog();
-            }
-            
+            }       
         }
         public void OyuncuHakki(int hak2)
         {
@@ -399,8 +352,7 @@ namespace BayrakBilmece
                 MessageBox.Show("Hata Geçerli hak sayısı Değil! "+hak2);
         }
         public void OyuncuBilgileriniSonucaGonder(Sonuc sonuc2)
-        {
-            
+        { 
             sonuc2.pictureBox1.BackgroundImage = pictureBox1.BackgroundImage;
             sonuc2.label2.Text = label2.Text;
             sonuc2.label2.Location = new Point((sonuc2.Width-sonuc2.label2.Width)/2,sonuc2.label2.Location.Y);
@@ -411,7 +363,6 @@ namespace BayrakBilmece
             sonuc2.label9.Text = bilinenSoruSayisi.ToString();
             sonuc2.label9.Location = new Point((sonuc2.groupBox1.Width - sonuc2.label9.Width) / 2, sonuc2.label9.Location.Y);
         }
-
         public void  YenidenOyna()
         {
             label4.Text = (oyuncuToplamPuani) + " XP";
@@ -448,52 +399,42 @@ namespace BayrakBilmece
         {
             this.pictureBox5.BorderStyle = BorderStyle.Fixed3D;
         }
-
         private void pictureBox6_MouseHover(object sender, EventArgs e)
         {
             this.pictureBox6.BorderStyle = BorderStyle.Fixed3D;
         }
-
         private void pictureBox7_MouseHover(object sender, EventArgs e)
         {
             this.pictureBox7.BorderStyle = BorderStyle.Fixed3D;
         }
-
         private void pictureBox8_MouseHover(object sender, EventArgs e)
         {
             this.pictureBox8.BorderStyle = BorderStyle.Fixed3D;
         }
-
         private void pictureBox9_MouseHover(object sender, EventArgs e)
         {
             this.pictureBox9.BorderStyle = BorderStyle.Fixed3D;
         }
-
         private void pictureBox5_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox5.BorderStyle = BorderStyle.None;
         }
-
         private void pictureBox6_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox6.BorderStyle = BorderStyle.None;
         }
-
         private void pictureBox7_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox7.BorderStyle = BorderStyle.None;
         }
-
         private void pictureBox8_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox8.BorderStyle = BorderStyle.None;
         }
-
         private void pictureBox9_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox9.BorderStyle = BorderStyle.None;
         }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             if (progressBar1.Value < oyunSuresi)
@@ -508,7 +449,5 @@ namespace BayrakBilmece
                 sonuc.ShowDialog();
             }
         }
-
-
     }
 }
