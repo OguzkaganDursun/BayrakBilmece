@@ -36,10 +36,20 @@ namespace BayrakBilmece
                 oyun.kitalar[4] = "Kuzey Amerika";
             if (checkBox6.Checked)
                 oyun.kitalar[5] = "Okyanusya";
-            oyun.YenidenOyna();
-            oyun.Show();
-            this.Close();
-            Giris.anaMenu.Hide();
+            if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked && !checkBox4.Checked && !checkBox5.Checked 
+                && !checkBox6.Checked)
+            {
+                Uyari uyari = new Uyari();
+                uyari.textBox1.Text = "En Az Bir Kıta Seçiniz!";
+                uyari.ShowDialog();
+            }
+            else
+            {
+                oyun.YenidenOyna();
+                oyun.Show();
+                this.Close();
+                Giris.anaMenu.Hide();
+            }
         }
     }
 }
