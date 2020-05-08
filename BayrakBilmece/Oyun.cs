@@ -49,6 +49,7 @@ namespace BayrakBilmece
             RastgeleUlkeSec();
             BosBayraklaraAtama();
             progressBar1.Maximum = oyunSuresi;
+            timer1.Enabled = true;
         }
         public int ToplamKayitSayisi()
         {         
@@ -318,6 +319,7 @@ namespace BayrakBilmece
             timer1.Stop();
             cevap.ShowDialog();
             puan += 100;
+            oyuncuToplamPuani += 100;
             bilinenSoruSayisi++;
             label3.Text = puan + " XP";
             label3.Location = new Point((this.Width-label3.Width)/2,label3.Location.Y);
@@ -367,7 +369,7 @@ namespace BayrakBilmece
             sonuc2.pictureBox1.BackgroundImage = pictureBox1.BackgroundImage;
             sonuc2.label2.Text = label2.Text;
             sonuc2.label2.Location = new Point((sonuc2.Width-sonuc2.label2.Width)/2,sonuc2.label2.Location.Y);
-            sonuc2.label7.Text = (oyuncuToplamPuani + puan) + " XP";
+            sonuc2.label7.Text = oyuncuToplamPuani + " XP";
             sonuc2.label7.Location = new Point((sonuc2.groupBox1.Width - sonuc2.label7.Width) / 2, sonuc2.label7.Location.Y);
             sonuc2.label8.Text = "+" + puan;
             sonuc2.label8.Location = new Point((sonuc2.groupBox1.Width - sonuc2.label8.Width) / 2, sonuc2.label8.Location.Y);
@@ -377,7 +379,7 @@ namespace BayrakBilmece
 
         public void  YenidenOyna()
         {
-            label4.Text = (oyuncuToplamPuani + puan) + " XP";
+            label4.Text = (oyuncuToplamPuani) + " XP";
             puan = 0;
             hak = 4;
             bilinenSoruSayisi = 0;
@@ -385,6 +387,15 @@ namespace BayrakBilmece
             kalp2.Visible = true;
             kalp3.Visible = true;
             kalp4.Visible = true;
+
+            pictureBox5.ImageLocation = null;
+            pictureBox6.ImageLocation = null;
+            pictureBox7.ImageLocation = null;
+            pictureBox8.ImageLocation = null;
+            pictureBox9.ImageLocation = null;
+
+            SoruyuYenile();
+
             label3.Text = puan + " XP";        
             progressBar1.Value = 0;
             timer1.Start();
