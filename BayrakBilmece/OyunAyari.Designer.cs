@@ -159,9 +159,9 @@
             this.checkBox5.ForeColor = System.Drawing.Color.Snow;
             this.checkBox5.Location = new System.Drawing.Point(45, 194);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(111, 18);
+            this.checkBox5.Size = new System.Drawing.Size(109, 18);
             this.checkBox5.TabIndex = 16;
-            this.checkBox5.Text = "Güney Amerika";
+            this.checkBox5.Text = "Kuzey Amerika";
             this.checkBox5.UseVisualStyleBackColor = true;
             // 
             // checkBox4
@@ -171,9 +171,9 @@
             this.checkBox4.ForeColor = System.Drawing.Color.Snow;
             this.checkBox4.Location = new System.Drawing.Point(45, 171);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(109, 18);
+            this.checkBox4.Size = new System.Drawing.Size(111, 18);
             this.checkBox4.TabIndex = 15;
-            this.checkBox4.Text = "Kuzey Amerika";
+            this.checkBox4.Text = "Güney Amerika";
             this.checkBox4.UseVisualStyleBackColor = true;
             // 
             // checkBox3
@@ -183,9 +183,9 @@
             this.checkBox3.ForeColor = System.Drawing.Color.Snow;
             this.checkBox3.Location = new System.Drawing.Point(45, 147);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(59, 18);
+            this.checkBox3.Size = new System.Drawing.Size(65, 18);
             this.checkBox3.TabIndex = 14;
-            this.checkBox3.Text = "Afrika";
+            this.checkBox3.Text = "Avrupa";
             this.checkBox3.UseVisualStyleBackColor = true;
             // 
             // checkBox2
@@ -207,9 +207,9 @@
             this.checkBox1.ForeColor = System.Drawing.Color.Snow;
             this.checkBox1.Location = new System.Drawing.Point(45, 99);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(65, 18);
+            this.checkBox1.Size = new System.Drawing.Size(59, 18);
             this.checkBox1.TabIndex = 12;
-            this.checkBox1.Text = "Avrupa";
+            this.checkBox1.Text = "Afrika";
             this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // pictureBox1

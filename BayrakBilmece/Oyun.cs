@@ -18,6 +18,10 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        //Oyun Ayarları Bilgileri
+
+        public string[] kitalar = new string[6];
+        
         public int oyuncuToplamPuani=0;
         public int oyunSuresi = 10000;
         public int oyunSuresiSiniri = 9000;
@@ -37,13 +41,21 @@ namespace BayrakBilmece
         Label label = new Label();
         int toplamKayitSayi=0;
         string soruMetni;
+
+
         private void Oyun_Load(object sender, EventArgs e)
         {
-            pictureBox = Giris.anaMenu.pictureBox1;            
-            label = Giris.anaMenu.label2;
+
+            //for (int a = 0; a < kitalar.Length; a++)
+            //{
+            //    MessageBox.Show(kitalar[a]);
+            //}
+                
+            pictureBox = Giris.anaMenu.pictureBox1; //Kullanıcı Profil Resmi           
+            label = Giris.anaMenu.label2;//Kullanıcı İsmi
             pictureBox1.BackgroundImage = pictureBox.BackgroundImage;
             label2.Text = label.Text;
-            oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;
+            oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;//Kullanıcı Toplam Puanı
             label4.Text = oyuncuToplamPuani+" XP";           
 
             RastgeleUlkeSec();
@@ -51,16 +63,18 @@ namespace BayrakBilmece
             progressBar1.Maximum = oyunSuresi;
             timer1.Enabled = true;
         }
+
         public int ToplamKayitSayisi()
-        {         
+        {
             try
             {
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("select count(*) from ulke_bilgileri",baglanti);
+                OleDbCommand komut = new OleDbCommand("select count(*) from ulke_bilgileri where Kita='"+kitalar[0]+ "' or Kita='" + kitalar[1] + "' or Kita='" + kitalar[2] + "' or Kita='" + kitalar[3] + "' or Kita='" + kitalar[4] + "' or Kita='" + kitalar[5] + "' ", baglanti);             
                 OleDbDataReader oku = komut.ExecuteReader();
                 oku.Read();
+                //MessageBox.Show(oku[0].ToString());
                 toplamKayitSayi = Convert.ToInt32(oku[0]);
-                baglanti.Close();                   
+                baglanti.Close();
             }
             catch (Exception aciklama)
             {
@@ -69,6 +83,25 @@ namespace BayrakBilmece
             }
             return toplamKayitSayi;
         }
+
+        //public int ToplamKayitSayisi()
+        //{
+        //    try
+        //    {
+        //        baglanti.Open();
+        //        OleDbCommand komut = new OleDbCommand("select count(*) from ulke_bilgileri", baglanti);
+        //        OleDbDataReader oku = komut.ExecuteReader();
+        //        oku.Read();
+        //        toplamKayitSayi = Convert.ToInt32(oku[0]);
+        //        baglanti.Close();
+        //    }
+        //    catch (Exception aciklama)
+        //    {
+        //        MessageBox.Show(aciklama.Message, "toplam Kayıt çalışmadı");
+        //        baglanti.Close();
+        //    }
+        //    return toplamKayitSayi;
+        //}
 
         public void SoruHazirla(string isim,string baskent,string nufus)
         {
@@ -122,7 +155,7 @@ namespace BayrakBilmece
             {
                 int id = 1;
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri", baglanti);
+                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri where Kita='" + kitalar[0] + "' or Kita='" + kitalar[1] + "' or Kita='" + kitalar[2] + "' or Kita='" + kitalar[3] + "' or Kita='" + kitalar[4] + "' or Kita='" + kitalar[5] + "' ", baglanti);
                 OleDbDataReader oku = komut.ExecuteReader();
                 while (id <= secilenUlke)
                 {
@@ -147,7 +180,7 @@ namespace BayrakBilmece
             }
             catch (Exception acikla)
             {
-                MessageBox.Show(acikla.Message, "Ülke Seçilemedi!");
+                MessageBox.Show(acikla.Message, "Rastgele Ülke Seçilemedi!");
                 baglanti.Close();
             }
         }
@@ -199,7 +232,7 @@ namespace BayrakBilmece
             {
                 int id = 1;
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri", baglanti);
+                OleDbCommand komut = new OleDbCommand("select * from ulke_bilgileri where Kita='" + kitalar[0] + "' or Kita='" + kitalar[1] + "' or Kita='" + kitalar[2] + "' or Kita='" + kitalar[3] + "' or Kita='" + kitalar[4] + "' or Kita='" + kitalar[5] + "' ", baglanti);
                 OleDbDataReader oku = komut.ExecuteReader();
                 while (id <= secilenUlke)
                 {
