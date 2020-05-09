@@ -19,7 +19,7 @@ namespace BayrakBilmece
         }
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public int oyuncuToplamPuani=0;
-        public int oyuncuSeviyesi = 0;
+        public int oyuncuSeviyesi = 1;
         public int seviyeDegiskeni = 2000;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -51,6 +51,7 @@ namespace BayrakBilmece
             label3.Text = oyuncuToplamPuani + " XP";
             KullaniciBilgileriniGetir();
             progressBar1.Maximum = seviyeDegiskeni;
+           // progressBar1.Value = oyuncuToplamPuani;
         }
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -106,8 +107,8 @@ namespace BayrakBilmece
             if(oyuncuToplamPuani / seviyeDegiskeni >= 1)
             {
                 oyuncuSeviyesi++;
-                oyuncuToplamPuani = oyuncuToplamPuani-seviyeDegiskeni;
-                progressBar1.Value = 0;
+                progressBar1.Value = oyuncuToplamPuani;
+                oyuncuToplamPuani = oyuncuToplamPuani-seviyeDegiskeni;           
                 label5.Text = oyuncuSeviyesi.ToString();
                 label3.Text = oyuncuToplamPuani + " XP";
             }

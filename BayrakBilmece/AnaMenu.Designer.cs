@@ -162,7 +162,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.Gold;
+            this.label5.ForeColor = System.Drawing.Color.Khaki;
             this.label5.Location = new System.Drawing.Point(674, 26);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(18, 19);
@@ -185,7 +185,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label4.ForeColor = System.Drawing.Color.Aqua;
+            this.label4.ForeColor = System.Drawing.Color.DarkTurquoise;
             this.label4.Location = new System.Drawing.Point(573, 26);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(60, 19);
