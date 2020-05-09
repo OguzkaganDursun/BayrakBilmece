@@ -37,10 +37,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -158,16 +158,13 @@
             this.panel1.Size = new System.Drawing.Size(800, 90);
             this.panel1.TabIndex = 7;
             // 
-            // label5
+            // panel2
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
-            this.label5.ForeColor = System.Drawing.Color.Khaki;
-            this.label5.Location = new System.Drawing.Point(674, 26);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(18, 19);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "0";
+            this.panel2.Controls.Add(this.progressBar1);
+            this.panel2.Location = new System.Drawing.Point(551, 56);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(178, 6);
+            this.panel2.TabIndex = 10;
             // 
             // progressBar1
             // 
@@ -179,7 +176,17 @@
             this.progressBar1.Size = new System.Drawing.Size(180, 8);
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.progressBar1.TabIndex = 9;
-            this.progressBar1.Value = 5000;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.label5.ForeColor = System.Drawing.Color.Khaki;
+            this.label5.Location = new System.Drawing.Point(674, 26);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(18, 19);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "0";
             // 
             // label4
             // 
@@ -191,14 +198,6 @@
             this.label4.Size = new System.Drawing.Size(60, 19);
             this.label4.TabIndex = 8;
             this.label4.Text = "Seviye";
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.progressBar1);
-            this.panel2.Location = new System.Drawing.Point(551, 56);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(178, 6);
-            this.panel2.TabIndex = 10;
             // 
             // AnaMenu
             // 

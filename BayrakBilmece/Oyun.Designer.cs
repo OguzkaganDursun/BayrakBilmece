@@ -47,6 +47,7 @@
             this.kalp2 = new System.Windows.Forms.PictureBox();
             this.kalp1 = new System.Windows.Forms.PictureBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp4)).BeginInit();
@@ -57,6 +58,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
@@ -209,7 +211,7 @@
             // progressBar1
             // 
             this.progressBar1.ForeColor = System.Drawing.Color.OrangeRed;
-            this.progressBar1.Location = new System.Drawing.Point(0, 90);
+            this.progressBar1.Location = new System.Drawing.Point(-1, -1);
             this.progressBar1.Margin = new System.Windows.Forms.Padding(0);
             this.progressBar1.Maximum = 10000;
             this.progressBar1.Name = "progressBar1";
@@ -261,6 +263,15 @@
             this.label5.TabIndex = 27;
             this.label5.Text = "Soru";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(28)))), ((int)(((byte)(25)))), ((int)(((byte)(26)))));
+            this.panel1.Controls.Add(this.progressBar1);
+            this.panel1.Location = new System.Drawing.Point(1, 90);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(782, 13);
+            this.panel1.TabIndex = 28;
+            // 
             // Oyun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,9 +279,9 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(31)))), ((int)(((byte)(32)))));
             this.ClientSize = new System.Drawing.Size(784, 461);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.kalp1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label4);
@@ -300,6 +311,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kalp1)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,5 +335,6 @@
         public System.Windows.Forms.PictureBox kalp2;
         public System.Windows.Forms.PictureBox kalp1;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Panel panel1;
     }
 }
