@@ -20,6 +20,9 @@ namespace BayrakBilmece
         }
         //Oyun Ayarları Bilgileri
 
+        public int red = 0, green = 255, blue = 0;
+        public int renkDegisim = 0;
+
         public string[] kitalar = new string[6];
         public string oyunZorlugu="Kolay";
         
@@ -102,16 +105,20 @@ namespace BayrakBilmece
             for (int i=0;i< ipucu; i++)
             {
                 if (dizilerim[i] == 1)
-                    soruMetni += "İsmi '" + isim + "'";
+                    soruMetni += "İsmi " + isim + "";
                 if (dizilerim[i] == 2)
-                    soruMetni += "Başkent '" + baskent + "'";
+                    soruMetni += "Başkenti " + baskent + "";
                 if (dizilerim[i] == 3)
-                    soruMetni += "Nüfus '" + nufus + "'";
+                    soruMetni += "Nüfusu " + nufus + "";
                 if((i+1)<ipucu)
-                    soruMetni += " ve ";
+                    soruMetni += ", ";
             }
-            soruMetni += " olan ülke?";
-            textBox2.Text = soruMetni;
+            soruMetni += " Olan Ülke Hangisidir ?";
+            //textBox2.Text = soruMetni;
+            label5.Text = soruMetni;
+            label5.Location = new Point((this.Width-label5.Width)/2,label5.Location.Y);
+
+
         }
         public void RastgeleUlkeSec()
         {
@@ -300,7 +307,11 @@ namespace BayrakBilmece
             pictureBox9.ImageLocation = null;
             RastgeleUlkeSec();
             BosBayraklaraAtama();
+            red = 0;
+            green = 255;
+            blue = 0;
             progressBar1.Value = 0;
+            progressBar1.ForeColor = Color.FromArgb(255, red, green, blue);
             timer1.Start();
         }
         public void DogruCevap()
@@ -372,12 +383,14 @@ namespace BayrakBilmece
             kalp4.Visible = true;
             label4.Text = (oyuncuToplamPuani) + " XP";
             puan = 0;
+
             if (oyunZorlugu == "Kolay")
             {
                 hak = 4;
                 oyunSuresi = 10000;
                 oyunSuresiSiniri = 8000;
                 progressBar1.Maximum = oyunSuresi;
+                renkDegisim = 3;
             }              
             if (oyunZorlugu == "Orta")
             {
@@ -389,6 +402,7 @@ namespace BayrakBilmece
                 oyunSuresi = 8000;
                 oyunSuresiSiniri = 6000;
                 progressBar1.Maximum = oyunSuresi;
+                renkDegisim = 5;
             }
             if (oyunZorlugu == "Zor")
             {
@@ -400,6 +414,7 @@ namespace BayrakBilmece
                 oyunSuresi = 6000;
                 oyunSuresiSiniri = 4000;
                 progressBar1.Maximum = oyunSuresi;
+                renkDegisim = 5;
             }
             bilinenSoruSayisi = 0;
 
@@ -410,7 +425,7 @@ namespace BayrakBilmece
             pictureBox8.ImageLocation = null;
             pictureBox9.ImageLocation = null;
 
-            MessageBox.Show(oyunZorlugu+" "+oyunSuresi);
+            //MessageBox.Show(oyunZorlugu+" "+oyunSuresi);
 
             SoruyuYenile();
 
@@ -424,7 +439,7 @@ namespace BayrakBilmece
             {
                 oyunSuresi -= 500;
                 progressBar1.Maximum = oyunSuresi;
-                MessageBox.Show("Bilinen Soru Sayısı = "+bilinenSoruSayisi+"\nOyun Süresi = "+oyunSuresi);
+                //MessageBox.Show("Bilinen Soru Sayısı = "+bilinenSoruSayisi+"\nOyun Süresi = "+oyunSuresi);
             }
         }
         private void pictureBox5_MouseHover(object sender, EventArgs e)
@@ -471,6 +486,18 @@ namespace BayrakBilmece
         {
             if (progressBar1.Value < oyunSuresi)
             {
+                if (green > 0)
+                {
+                    green -= renkDegisim;
+                    blue += renkDegisim;
+                    progressBar1.ForeColor = Color.FromArgb(255, red, green, blue);
+                }
+                else if (red < 255)
+                {
+                    red += renkDegisim;
+                    blue -= renkDegisim;
+                    progressBar1.ForeColor = Color.FromArgb(255, red, green, blue);
+                }
                 progressBar1.Value += 50;
             }
             else

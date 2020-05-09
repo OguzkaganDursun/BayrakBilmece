@@ -68,7 +68,7 @@ namespace BayrakBilmece
                     MessageBox.Show("Kullanıcı Bulunamadı!");
                 else
                 {
-                    MessageBox.Show("Kullanıcı Adı = " + oku[0].ToString() + "\nKullanıcı Puanı = " + oku[1].ToString() + " XP\nAvatar = "+oku[2].ToString());
+                    //MessageBox.Show("Kullanıcı Adı = " + oku[0].ToString() + "\nKullanıcı Puanı = " + oku[1].ToString() + " XP\nAvatar = "+oku[2].ToString());
                     label3.Text = oku[1].ToString()+" XP";
                     oyuncuToplamPuani = Convert.ToInt32(oku[1]);
                     KarakterSecimi karakterSecimi = new KarakterSecimi();
