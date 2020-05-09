@@ -29,10 +29,10 @@ namespace BayrakBilmece
 
             Giris.anaMenu.label3.Text = label7.Text;
             Giris.anaMenu.oyuncuToplamPuani = OyunAyari.oyun.oyuncuToplamPuani ;
-
+            
             Giris.anaMenu.SeviyeAtla();
             VeriTabaninaGonder();
-            
+            OyunAyari.oyun.oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;
             Giris.anaMenu.Show();
             OyunAyari.oyun.Hide();
             this.Close();

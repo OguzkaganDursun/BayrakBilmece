@@ -19,8 +19,8 @@ namespace BayrakBilmece
         }
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public int oyuncuToplamPuani=0;
-        public int oyuncuSeviyesi = 1;
-        public int seviyeDegiskeni = 2000;
+        public int oyuncuSeviyesi = 0;
+        public int seviyeDegiskeni = 1000;
         private void button1_Click(object sender, EventArgs e)
         {
             OyunAyari oyunAyari = new OyunAyari();
@@ -104,14 +104,19 @@ namespace BayrakBilmece
         }
         public void SeviyeAtla()
         {
-            if(oyuncuToplamPuani / seviyeDegiskeni >= 1)
+            if (oyuncuToplamPuani >= seviyeDegiskeni)
             {
                 oyuncuSeviyesi++;
-                progressBar1.Value = oyuncuToplamPuani;
-                oyuncuToplamPuani = oyuncuToplamPuani-seviyeDegiskeni;           
+                oyuncuToplamPuani = oyuncuToplamPuani - seviyeDegiskeni;
                 label5.Text = oyuncuSeviyesi.ToString();
                 label3.Text = oyuncuToplamPuani + " XP";
+                progressBar1.Value = oyuncuToplamPuani;
             }
+            else
+            {
+                progressBar1.Value = oyuncuToplamPuani;
+            }
+
         }
     }
 }
