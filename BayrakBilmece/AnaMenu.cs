@@ -19,6 +19,8 @@ namespace BayrakBilmece
         }
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public int oyuncuToplamPuani=0;
+        public int oyuncuSeviyesi = 0;
+        public int seviyeDegiskeni = 2000;
         private void button1_Click(object sender, EventArgs e)
         {
             OyunAyari oyunAyari = new OyunAyari();
@@ -48,6 +50,7 @@ namespace BayrakBilmece
             label2.Text = Giris.isimGirisi;
             label3.Text = oyuncuToplamPuani + " XP";
             KullaniciBilgileriniGetir();
+            progressBar1.Maximum = seviyeDegiskeni;
         }
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -71,6 +74,9 @@ namespace BayrakBilmece
                     //MessageBox.Show("Kullanıcı Adı = " + oku[0].ToString() + "\nKullanıcı Puanı = " + oku[1].ToString() + " XP\nAvatar = "+oku[2].ToString());
                     label3.Text = oku[1].ToString()+" XP";
                     oyuncuToplamPuani = Convert.ToInt32(oku[1]);
+                    oyuncuSeviyesi = Convert.ToInt32(oku[3]);
+                    label5.Text = oku[3].ToString();
+                    progressBar1.Value = oyuncuToplamPuani;
                     KarakterSecimi karakterSecimi = new KarakterSecimi();
                     if (Convert.ToInt32(oku[2]) == 1)
                         karakterSecimi.KarakterSec(karakterSecimi.pictureBox1);
@@ -95,6 +101,16 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-
+        public void SeviyeAtla()
+        {
+            if(oyuncuToplamPuani / seviyeDegiskeni >= 1)
+            {
+                oyuncuSeviyesi++;
+                oyuncuToplamPuani = oyuncuToplamPuani-seviyeDegiskeni;
+                progressBar1.Value = 0;
+                label5.Text = oyuncuSeviyesi.ToString();
+                label3.Text = oyuncuToplamPuani + " XP";
+            }
+        }
     }
 }

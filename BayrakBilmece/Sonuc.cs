@@ -30,6 +30,7 @@ namespace BayrakBilmece
             Giris.anaMenu.label3.Text = label7.Text;
             Giris.anaMenu.oyuncuToplamPuani = OyunAyari.oyun.oyuncuToplamPuani ;
 
+            Giris.anaMenu.SeviyeAtla();
             VeriTabaninaGonder();
             
             Giris.anaMenu.Show();
@@ -47,7 +48,7 @@ namespace BayrakBilmece
             try
             {
                 baglanti.Open();
-                OleDbCommand komut = new OleDbCommand("update kullanicilar set Puan='" + OyunAyari.oyun.oyuncuToplamPuani + "' where Isim='" + Giris.anaMenu.label2.Text + "'", baglanti);
+                OleDbCommand komut = new OleDbCommand("update kullanicilar set Puan='" + Giris.anaMenu.oyuncuToplamPuani + "', Seviye='"+ Giris.anaMenu.oyuncuSeviyesi +"' where Isim='"  + Giris.anaMenu.label2.Text + "'", baglanti);
                 OleDbDataReader oku = komut.ExecuteReader();
                 oku.Read();
                 baglanti.Close();
