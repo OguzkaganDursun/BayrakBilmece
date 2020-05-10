@@ -81,7 +81,7 @@ namespace BayrakBilmece
             PanelGetir(panel6);
         }
         public static string isimGirisi;
-        public static string yoneticiSifre;
+        string yoneticiSifre = "9799";
         public static AnaMenu anaMenu = new AnaMenu();
         public static Yonetici yonetici = new Yonetici();
         private void button7_Click(object sender, EventArgs e)
@@ -103,8 +103,7 @@ namespace BayrakBilmece
 
         private void button5_Click(object sender, EventArgs e)
         {
-            yoneticiSifre = textBox2.Text;
-            if (textBox2.Text == "9799")
+            if (textBox2.Text == yoneticiSifre)
             {
                 Yonetici yonetici = new Yonetici();
                 yonetici.Show();
@@ -138,5 +137,42 @@ namespace BayrakBilmece
             textBox1.Clear();
         }
 
+        private void textBox1_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                isimGirisi = textBox1.Text;
+                if (textBox1.Text == "İsim" || textBox1.Text == "" || textBox1.Text == " " || textBox1.Text == "  ")
+                {
+                    Uyari uyari = new Uyari();
+                    uyari.textBox1.Text = "Lütfen Bir İsim Giriniz !";
+                    uyari.ShowDialog();
+                }
+                else
+                {
+                    anaMenu.Show();
+                    this.Hide();
+                }
+            }
+        }
+
+        private void textBox2_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode==Keys.Enter)
+            {
+                if (textBox2.Text == yoneticiSifre)
+                {
+                    Yonetici yonetici = new Yonetici();
+                    yonetici.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    Uyari uyari = new Uyari();
+                    uyari.textBox1.Text = "Hatalı Giriş Yaptınız !";
+                    uyari.ShowDialog();
+                }
+            }
+        }
     }
 }

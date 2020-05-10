@@ -244,6 +244,7 @@
             this.textBox1.Text = "İsim";
             this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox1.Click += new System.EventHandler(this.textBox1_Click);
+            this.textBox1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox1_KeyDown);
             // 
             // pictureBox2
             // 
@@ -347,6 +348,7 @@
             this.textBox2.Size = new System.Drawing.Size(236, 33);
             this.textBox2.TabIndex = 15;
             this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox2.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox2_KeyDown);
             // 
             // pictureBox3
             // 

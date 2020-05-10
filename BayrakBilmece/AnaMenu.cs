@@ -51,7 +51,6 @@ namespace BayrakBilmece
             label3.Text = oyuncuToplamPuani + " XP";
             KullaniciBilgileriniGetir();
             progressBar1.Maximum = seviyeDegiskeni;
-           // progressBar1.Value = oyuncuToplamPuani;
         }
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
@@ -72,7 +71,6 @@ namespace BayrakBilmece
                     MessageBox.Show("Kullanıcı Bulunamadı!");
                 else
                 {
-                    //MessageBox.Show("Kullanıcı Adı = " + oku[0].ToString() + "\nKullanıcı Puanı = " + oku[1].ToString() + " XP\nAvatar = "+oku[2].ToString());
                     label3.Text = oku[1].ToString()+" XP";
                     oyuncuToplamPuani = Convert.ToInt32(oku[1]);
                     oyuncuSeviyesi = Convert.ToInt32(oku[3]);
@@ -104,18 +102,23 @@ namespace BayrakBilmece
         }
         public void SeviyeAtla()
         {
-            if (oyuncuToplamPuani >= seviyeDegiskeni)
+            bool artanPuan = true;
+            while (artanPuan==true)
             {
-                oyuncuSeviyesi++;
-                oyuncuToplamPuani = oyuncuToplamPuani - seviyeDegiskeni;
-                label5.Text = oyuncuSeviyesi.ToString();
-                label3.Text = oyuncuToplamPuani + " XP";
-                progressBar1.Value = oyuncuToplamPuani;
+                if (oyuncuToplamPuani >= seviyeDegiskeni)
+                {
+                    oyuncuSeviyesi++;
+                    oyuncuToplamPuani = oyuncuToplamPuani - seviyeDegiskeni;
+                    label5.Text = oyuncuSeviyesi.ToString();
+                    label3.Text = oyuncuToplamPuani + " XP";                   
+                }
+                else
+                {
+                    progressBar1.Value = oyuncuToplamPuani;
+                    artanPuan = false;
+                }
             }
-            else
-            {
-                progressBar1.Value = oyuncuToplamPuani;
-            }
+            
 
         }
     }
