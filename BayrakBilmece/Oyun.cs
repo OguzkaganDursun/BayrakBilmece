@@ -56,7 +56,11 @@ namespace BayrakBilmece
             oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;//Kullanıcı Toplam Puanı
             label4.Text = oyuncuToplamPuani+" XP";
             progressBar1.Maximum = oyunSuresi;
-            timer1.Enabled = true;         
+            timer1.Enabled = true;
+
+            axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\Timer.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            
         }
         public int ToplamKayitSayisi()
         {
@@ -327,6 +331,8 @@ namespace BayrakBilmece
             cevap.label1.ForeColor = Color.Gold;
             cevap.label1.Location = new Point((cevap.Width-cevap.label1.Width)/2,cevap.label1.Location.Y);
             timer1.Stop();
+            cevap.axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\DogruCevap.mp3";
+            cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
             cevap.ShowDialog();
             puan += 100;
             oyuncuToplamPuani += 100;
@@ -347,6 +353,8 @@ namespace BayrakBilmece
             cevap.label1.Text = "Yanlış";
             cevap.label1.ForeColor = Color.Red;
             timer1.Stop();
+            cevap.axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\YanlisCevap.mp3";
+            cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
             cevap.ShowDialog();                  
             if (hak == 0)
             {
@@ -444,7 +452,7 @@ namespace BayrakBilmece
             {
                 oyunSuresi -= 500;
                 progressBar1.Maximum = oyunSuresi;
-                //MessageBox.Show("Bilinen Soru Sayısı = "+bilinenSoruSayisi+"\nOyun Süresi = "+oyunSuresi);
+                timer2.Interval += 200;
             }
         }
         private void pictureBox5_MouseHover(object sender, EventArgs e)
@@ -483,12 +491,19 @@ namespace BayrakBilmece
         {
             this.pictureBox8.BorderStyle = BorderStyle.None;
         }
+
+        private void timer2_Tick(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+
         private void pictureBox9_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox9.BorderStyle = BorderStyle.None;
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
+            
             if (progressBar1.Value < oyunSuresi)
             {
                 if (green > 0)
@@ -508,6 +523,7 @@ namespace BayrakBilmece
             else
             {
                 timer1.Stop();
+                timer2.Stop();
                 Sonuc sonuc = new Sonuc();
                 OyuncuBilgileriniSonucaGonder(sonuc);
                 sonuc.ShowDialog();
