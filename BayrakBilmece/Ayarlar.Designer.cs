@@ -83,7 +83,7 @@
             // 
             // trackBar1
             // 
-            this.trackBar1.Location = new System.Drawing.Point(6, 9);
+            this.trackBar1.Location = new System.Drawing.Point(7, 10);
             this.trackBar1.Name = "trackBar1";
             this.trackBar1.Size = new System.Drawing.Size(188, 45);
             this.trackBar1.TabIndex = 0;
@@ -152,13 +152,13 @@
             // radioButton2
             // 
             this.radioButton2.AutoSize = true;
+            this.radioButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.radioButton2.ForeColor = System.Drawing.Color.Snow;
-            this.radioButton2.Location = new System.Drawing.Point(116, 13);
+            this.radioButton2.Location = new System.Drawing.Point(118, 13);
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(67, 20);
+            this.radioButton2.Size = new System.Drawing.Size(66, 20);
             this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
             this.radioButton2.Text = "Kapalı";
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
@@ -166,6 +166,7 @@
             // 
             this.radioButton1.AutoSize = true;
             this.radioButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.radioButton1.Checked = true;
             this.radioButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.radioButton1.ForeColor = System.Drawing.Color.Snow;
@@ -212,24 +213,26 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.radioButton3.ForeColor = System.Drawing.Color.Snow;
-            this.radioButton3.Location = new System.Drawing.Point(116, 13);
+            this.radioButton3.Location = new System.Drawing.Point(118, 13);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(67, 20);
+            this.radioButton3.Size = new System.Drawing.Size(66, 20);
             this.radioButton3.TabIndex = 1;
-            this.radioButton3.TabStop = true;
             this.radioButton3.Text = "Kapalı";
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
+            this.radioButton4.Checked = true;
+            this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.radioButton4.ForeColor = System.Drawing.Color.Snow;
             this.radioButton4.Location = new System.Drawing.Point(23, 13);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(53, 20);
+            this.radioButton4.Size = new System.Drawing.Size(52, 20);
             this.radioButton4.TabIndex = 0;
             this.radioButton4.TabStop = true;
             this.radioButton4.Text = "Açık";

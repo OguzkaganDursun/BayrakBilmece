@@ -143,11 +143,13 @@
             // checkBox6
             // 
             this.checkBox6.AutoSize = true;
-            this.checkBox6.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox6.FlatAppearance.BorderSize = 0;
+            this.checkBox6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox6.ForeColor = System.Drawing.Color.Snow;
-            this.checkBox6.Location = new System.Drawing.Point(45, 218);
+            this.checkBox6.Location = new System.Drawing.Point(45, 214);
             this.checkBox6.Name = "checkBox6";
-            this.checkBox6.Size = new System.Drawing.Size(86, 18);
+            this.checkBox6.Size = new System.Drawing.Size(93, 20);
             this.checkBox6.TabIndex = 17;
             this.checkBox6.Text = "Okyanusya";
             this.checkBox6.UseVisualStyleBackColor = true;
@@ -155,11 +157,13 @@
             // checkBox5
             // 
             this.checkBox5.AutoSize = true;
-            this.checkBox5.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox5.FlatAppearance.BorderSize = 0;
+            this.checkBox5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox5.ForeColor = System.Drawing.Color.Snow;
-            this.checkBox5.Location = new System.Drawing.Point(45, 194);
+            this.checkBox5.Location = new System.Drawing.Point(45, 191);
             this.checkBox5.Name = "checkBox5";
-            this.checkBox5.Size = new System.Drawing.Size(109, 18);
+            this.checkBox5.Size = new System.Drawing.Size(120, 20);
             this.checkBox5.TabIndex = 16;
             this.checkBox5.Text = "Kuzey Amerika";
             this.checkBox5.UseVisualStyleBackColor = true;
@@ -167,11 +171,13 @@
             // checkBox4
             // 
             this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox4.FlatAppearance.BorderSize = 0;
+            this.checkBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox4.ForeColor = System.Drawing.Color.Snow;
-            this.checkBox4.Location = new System.Drawing.Point(45, 171);
+            this.checkBox4.Location = new System.Drawing.Point(45, 168);
             this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(111, 18);
+            this.checkBox4.Size = new System.Drawing.Size(122, 20);
             this.checkBox4.TabIndex = 15;
             this.checkBox4.Text = "Güney Amerika";
             this.checkBox4.UseVisualStyleBackColor = true;
@@ -179,11 +185,13 @@
             // checkBox3
             // 
             this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox3.FlatAppearance.BorderSize = 0;
+            this.checkBox3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox3.ForeColor = System.Drawing.Color.Snow;
-            this.checkBox3.Location = new System.Drawing.Point(45, 147);
+            this.checkBox3.Location = new System.Drawing.Point(45, 145);
             this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(65, 18);
+            this.checkBox3.Size = new System.Drawing.Size(69, 20);
             this.checkBox3.TabIndex = 14;
             this.checkBox3.Text = "Avrupa";
             this.checkBox3.UseVisualStyleBackColor = true;
@@ -191,11 +199,13 @@
             // checkBox2
             // 
             this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox2.FlatAppearance.BorderSize = 0;
+            this.checkBox2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox2.ForeColor = System.Drawing.Color.Snow;
-            this.checkBox2.Location = new System.Drawing.Point(45, 123);
+            this.checkBox2.Location = new System.Drawing.Point(45, 122);
             this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(53, 18);
+            this.checkBox2.Size = new System.Drawing.Size(54, 20);
             this.checkBox2.TabIndex = 13;
             this.checkBox2.Text = "Asya";
             this.checkBox2.UseVisualStyleBackColor = true;
@@ -203,11 +213,14 @@
             // checkBox1
             // 
             this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.checkBox1.FlatAppearance.BorderColor = System.Drawing.Color.Purple;
+            this.checkBox1.FlatAppearance.BorderSize = 0;
+            this.checkBox1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.checkBox1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
             this.checkBox1.ForeColor = System.Drawing.Color.Snow;
             this.checkBox1.Location = new System.Drawing.Point(45, 99);
             this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(59, 18);
+            this.checkBox1.Size = new System.Drawing.Size(61, 20);
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Afrika";
             this.checkBox1.UseVisualStyleBackColor = true;
