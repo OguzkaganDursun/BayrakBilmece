@@ -152,6 +152,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.axWindowsMediaPlayer1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Controls.Add(this.label5);
             this.panel1.Controls.Add(this.label4);
@@ -204,10 +205,10 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(454, 369);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(744, 66);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(35, 36);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(32, 33);
             this.axWindowsMediaPlayer1.TabIndex = 8;
             this.axWindowsMediaPlayer1.Visible = false;
             // 
@@ -220,7 +221,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(800, 500);
-            this.Controls.Add(this.axWindowsMediaPlayer1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.pictureBox1);
@@ -262,6 +262,6 @@
         private System.Windows.Forms.ProgressBar progressBar1;
         public System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel2;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

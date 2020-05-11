@@ -123,10 +123,13 @@
             // trackBar2
             // 
             this.trackBar2.Location = new System.Drawing.Point(6, 9);
+            this.trackBar2.Maximum = 100;
             this.trackBar2.Name = "trackBar2";
             this.trackBar2.Size = new System.Drawing.Size(188, 45);
             this.trackBar2.TabIndex = 0;
+            this.trackBar2.TickFrequency = 0;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
+            this.trackBar2.Value = 50;
             // 
             // label3
             // 
@@ -213,30 +216,32 @@
             // radioButton3
             // 
             this.radioButton3.AutoSize = true;
+            this.radioButton3.Checked = true;
             this.radioButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.radioButton3.ForeColor = System.Drawing.Color.Snow;
-            this.radioButton3.Location = new System.Drawing.Point(118, 13);
+            this.radioButton3.Location = new System.Drawing.Point(23, 14);
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(66, 20);
+            this.radioButton3.Size = new System.Drawing.Size(52, 20);
             this.radioButton3.TabIndex = 1;
-            this.radioButton3.Text = "Kapalı";
+            this.radioButton3.TabStop = true;
+            this.radioButton3.Text = "Açık";
             this.radioButton3.UseVisualStyleBackColor = true;
+            this.radioButton3.CheckedChanged += new System.EventHandler(this.radioButton3_CheckedChanged);
             // 
             // radioButton4
             // 
             this.radioButton4.AutoSize = true;
-            this.radioButton4.Checked = true;
             this.radioButton4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.radioButton4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold);
             this.radioButton4.ForeColor = System.Drawing.Color.Snow;
-            this.radioButton4.Location = new System.Drawing.Point(23, 13);
+            this.radioButton4.Location = new System.Drawing.Point(118, 14);
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(52, 20);
+            this.radioButton4.Size = new System.Drawing.Size(66, 20);
             this.radioButton4.TabIndex = 0;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Açık";
+            this.radioButton4.Text = "Kapalı";
             this.radioButton4.UseVisualStyleBackColor = true;
+            this.radioButton4.CheckedChanged += new System.EventHandler(this.radioButton4_CheckedChanged);
             // 
             // pictureBox1
             // 
@@ -295,20 +300,20 @@
 
         public System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TrackBar trackBar1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TrackBar trackBar2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.GroupBox groupBox4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
         private System.Windows.Forms.PictureBox pictureBox1;
+        public System.Windows.Forms.TrackBar trackBar1;
+        public System.Windows.Forms.TrackBar trackBar2;
+        public System.Windows.Forms.RadioButton radioButton2;
+        public System.Windows.Forms.RadioButton radioButton1;
+        public System.Windows.Forms.RadioButton radioButton3;
+        public System.Windows.Forms.RadioButton radioButton4;
     }
 }

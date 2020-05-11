@@ -22,6 +22,7 @@ namespace BayrakBilmece
         public int oyuncuToplamPuani=0;
         public int oyuncuSeviyesi = 0;
         public int seviyeDegiskeni = 1000;
+
         private void button1_Click(object sender, EventArgs e)
         {
             OyunAyari oyunAyari = new OyunAyari();
@@ -29,9 +30,8 @@ namespace BayrakBilmece
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
-            Ayarlar ayarlar = new Ayarlar();
-            ayarlar.ShowDialog();
+        {            
+            Giris.ayarlar.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -54,8 +54,16 @@ namespace BayrakBilmece
             progressBar1.Maximum = seviyeDegiskeni;
 
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\AnaMenuMusic.mp3";
-            axWindowsMediaPlayer1.Ctlcontrols.play();
-            axWindowsMediaPlayer1.settings.volume = 10;
+
+            bool muzikSesi= Giris.ayarlar.muzikSesi;
+
+            if (muzikSesi)
+            {
+                MessageBox.Show(muzikSesi.ToString());
+                Giris.ayarlar.muzikSesiVolume = Giris.ayarlar.trackBar2.Value;
+                axWindowsMediaPlayer1.settings.volume = Giris.ayarlar.muzikSesiVolume;
+                axWindowsMediaPlayer1.Ctlcontrols.play();              
+            }           
         }
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
