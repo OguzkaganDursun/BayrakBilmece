@@ -27,13 +27,21 @@ namespace BayrakBilmece
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton3.Checked)
+            {
                 muzikSesi = true;
+                Giris.anaMenu.MuzikBaslat(muzikSesi);
+            }
+                
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
             if (radioButton4.Checked)
+            {
                 muzikSesi = false;
+                Giris.anaMenu.MuzikDurdur(muzikSesi);
+            }
+                
         }
 
         private void trackBar2_ValueChanged(object sender, EventArgs e)
