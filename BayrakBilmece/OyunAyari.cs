@@ -19,11 +19,14 @@ namespace BayrakBilmece
         public static Oyun oyun = new Oyun();
         private void button2_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
+
             if (checkBox1.Checked)
                 oyun.kitalar[0] = "Afrika";
             if (checkBox2.Checked)
