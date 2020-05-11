@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.OleDb;
+using System.Media;
 
 namespace BayrakBilmece
 {
@@ -17,6 +18,8 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        SoundPlayer anaMenuMuzik = new SoundPlayer();
+        
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public int oyuncuToplamPuani=0;
         public int oyuncuSeviyesi = 0;
@@ -51,6 +54,10 @@ namespace BayrakBilmece
             label3.Text = oyuncuToplamPuani + " XP";
             KullaniciBilgileriniGetir();
             progressBar1.Maximum = seviyeDegiskeni;
+
+            anaMenuMuzik.SoundLocation = Application.StartupPath + "\\Muzik\\AnaMenuMusic.wav";
+            //MessageBox.Show(Application.StartupPath + @"\Muzik\AnaMenuMusic");
+            anaMenuMuzik.Play();
         }
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
