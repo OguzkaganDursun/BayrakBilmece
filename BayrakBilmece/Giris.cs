@@ -125,7 +125,7 @@ namespace BayrakBilmece
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            
+            ButonMuzigiCal();
             ayarlar.button1.Text = "Geri Dön";
             ayarlar.ShowDialog();
             
@@ -133,7 +133,7 @@ namespace BayrakBilmece
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Application.Exit ();
+            ButonMuzigiCal();
             this.Close();
         }
 

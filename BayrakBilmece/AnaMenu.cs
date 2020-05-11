@@ -45,6 +45,7 @@ namespace BayrakBilmece
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             KarakterSecimi karakterSecimi = new KarakterSecimi();
             karakterSecimi.ShowDialog();
         }

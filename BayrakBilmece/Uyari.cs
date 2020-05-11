@@ -19,7 +19,18 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             this.Close();
+        }
+
+        private void Uyari_Load(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+        }
+        public void ButonMuzigiCal()
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
     }
 }

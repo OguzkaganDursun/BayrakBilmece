@@ -22,11 +22,13 @@ namespace BayrakBilmece
         string dosyaYolu;
         private void button2_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             Guncelle();
         }
 
@@ -58,24 +60,36 @@ namespace BayrakBilmece
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             openFileDialog1.Title = "Bayrak Seçiniz!";
             openFileDialog1.FileName = textBox2.Text;
             openFileDialog1.Filter = "Png(*.png)|*.png";
-            if(openFileDialog1.ShowDialog()==DialogResult.OK)
-                pictureBox1.ImageLocation = openFileDialog1.FileName;          
-            dosyaYolu = openFileDialog1.FileName;
-            string uygulamaYolu;
-            uygulamaYolu = Application.StartupPath;
-            int yolUzunlugu;
-            yolUzunlugu = uygulamaYolu.Length;
-            dosyaYolu = dosyaYolu.Remove(0,yolUzunlugu);
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                pictureBox1.ImageLocation = openFileDialog1.FileName;
+                dosyaYolu = openFileDialog1.FileName;
+                string uygulamaYolu;
+                uygulamaYolu = Application.StartupPath;
+                int yolUzunlugu;
+                yolUzunlugu = uygulamaYolu.Length;
+                dosyaYolu = dosyaYolu.Remove(0, yolUzunlugu);
+            }
+            
         }
 
         private void Duzenle_Load(object sender, EventArgs e)
         {
+            axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
             dosyaYolu = pictureBox1.ImageLocation;
             DosyaYolu();
         }
+
+        public void ButonMuzigiCal()
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+
         public void DosyaYolu()
         {
             string uygulamaYolu;
@@ -83,6 +97,31 @@ namespace BayrakBilmece
             int yolUzunlugu;
             yolUzunlugu = uygulamaYolu.Length;
             dosyaYolu = dosyaYolu.Remove(0, yolUzunlugu);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+            ButonMuzigiCal();
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+            ButonMuzigiCal();
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            ButonMuzigiCal();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ButonMuzigiCal();
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            ButonMuzigiCal();
         }
     }
 }

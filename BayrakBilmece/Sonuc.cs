@@ -20,6 +20,9 @@ namespace BayrakBilmece
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         private void button2_Click(object sender, EventArgs e)
         {
+
+            Giris.anaMenu.ButonMuzigiCal();
+            
             OyunAyari.oyun.kitalar[0] = "";
             OyunAyari.oyun.kitalar[1] = "";
             OyunAyari.oyun.kitalar[2] = "";
@@ -35,10 +38,12 @@ namespace BayrakBilmece
             OyunAyari.oyun.oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;
             Giris.anaMenu.Show();
             OyunAyari.oyun.Hide();
+            Giris.anaMenu.MuzikBaslat(true);
             this.Close();
         }
         private void button1_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             OyunAyari.oyun.YenidenOyna();
             this.Close();
         }

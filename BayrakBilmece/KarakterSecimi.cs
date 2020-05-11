@@ -46,6 +46,7 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             this.Close();
         }
 
@@ -56,6 +57,7 @@ namespace BayrakBilmece
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             KarakterSec(pictureBox1);
             karakterNo = 1;
             VeriTabaninaGonder();
@@ -69,6 +71,7 @@ namespace BayrakBilmece
 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             KarakterSec(pictureBox2);
             karakterNo = 2;
             VeriTabaninaGonder();
@@ -82,6 +85,7 @@ namespace BayrakBilmece
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             KarakterSec(pictureBox3);
             karakterNo = 3;
             VeriTabaninaGonder();
@@ -95,7 +99,7 @@ namespace BayrakBilmece
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-
+            Giris.anaMenu.ButonMuzigiCal();
             KarakterSec(pictureBox4);
             karakterNo = 4;
             VeriTabaninaGonder();
@@ -109,6 +113,7 @@ namespace BayrakBilmece
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             KarakterSec(pictureBox5);
             karakterNo = 5;
             VeriTabaninaGonder();
@@ -122,6 +127,7 @@ namespace BayrakBilmece
 
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             KarakterSec(pictureBox6);
             karakterNo = 6;
             VeriTabaninaGonder();

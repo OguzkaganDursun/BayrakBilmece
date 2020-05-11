@@ -23,10 +23,19 @@ namespace BayrakBilmece
             KayitlariListele();
             IdGetir(textBox1);
             textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
+
+            axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+        }
+
+        public void ButonMuzigiCal()
+        {
+            axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             Ekle ekle = new Ekle();
             IdGetir(ekle.textBox1);
             ekle.ShowDialog();
@@ -35,6 +44,7 @@ namespace BayrakBilmece
 
         private void button2_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             Duzenle duzenle = new Duzenle();
             TextBox[] texts = new TextBox[5];
             PictureBox pictureBox = new PictureBox();
@@ -50,13 +60,15 @@ namespace BayrakBilmece
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {            
+        {
+            ButonMuzigiCal();
             KayitSil();          
             KayitlariListele();            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
+            ButonMuzigiCal();
             Giris giris = new Giris();
             giris.Show();
             this.Close();

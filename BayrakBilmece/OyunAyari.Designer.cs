@@ -108,6 +108,8 @@
             this.comboBox1.Size = new System.Drawing.Size(150, 24);
             this.comboBox1.TabIndex = 9;
             this.comboBox1.Text = "Kolay";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.comboBox1.Click += new System.EventHandler(this.comboBox1_Click);
             // 
             // label1
             // 
@@ -153,6 +155,7 @@
             this.checkBox6.TabIndex = 17;
             this.checkBox6.Text = "Okyanusya";
             this.checkBox6.UseVisualStyleBackColor = true;
+            this.checkBox6.CheckedChanged += new System.EventHandler(this.checkBox6_CheckedChanged);
             // 
             // checkBox5
             // 
@@ -167,6 +170,7 @@
             this.checkBox5.TabIndex = 16;
             this.checkBox5.Text = "Kuzey Amerika";
             this.checkBox5.UseVisualStyleBackColor = true;
+            this.checkBox5.CheckedChanged += new System.EventHandler(this.checkBox5_CheckedChanged);
             // 
             // checkBox4
             // 
@@ -181,6 +185,7 @@
             this.checkBox4.TabIndex = 15;
             this.checkBox4.Text = "Güney Amerika";
             this.checkBox4.UseVisualStyleBackColor = true;
+            this.checkBox4.CheckedChanged += new System.EventHandler(this.checkBox4_CheckedChanged);
             // 
             // checkBox3
             // 
@@ -195,6 +200,7 @@
             this.checkBox3.TabIndex = 14;
             this.checkBox3.Text = "Avrupa";
             this.checkBox3.UseVisualStyleBackColor = true;
+            this.checkBox3.CheckedChanged += new System.EventHandler(this.checkBox3_CheckedChanged);
             // 
             // checkBox2
             // 
@@ -209,6 +215,7 @@
             this.checkBox2.TabIndex = 13;
             this.checkBox2.Text = "Asya";
             this.checkBox2.UseVisualStyleBackColor = true;
+            this.checkBox2.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // checkBox1
             // 
@@ -224,6 +231,7 @@
             this.checkBox1.TabIndex = 12;
             this.checkBox1.Text = "Afrika";
             this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // pictureBox1
             // 

@@ -19,6 +19,7 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             this.Close();
         }
     }

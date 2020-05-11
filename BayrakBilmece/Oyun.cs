@@ -233,6 +233,7 @@ namespace BayrakBilmece
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 1)
             {
                 DogruCevap();
@@ -244,6 +245,7 @@ namespace BayrakBilmece
         }
         private void pictureBox6_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 2)
             {
                 DogruCevap();
@@ -255,6 +257,7 @@ namespace BayrakBilmece
         }
         private void pictureBox7_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 3)
             {
                 DogruCevap();
@@ -266,6 +269,7 @@ namespace BayrakBilmece
         }
         private void pictureBox8_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 4)
             {
                 DogruCevap();
@@ -277,6 +281,7 @@ namespace BayrakBilmece
         }
         private void pictureBox9_Click(object sender, EventArgs e)
         {
+            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 5)
             {
                 DogruCevap();

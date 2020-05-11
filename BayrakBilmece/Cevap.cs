@@ -20,7 +20,8 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if(OyunAyari.oyun.hak>0)
+            Giris.anaMenu.ButonMuzigiCal();
+            if (OyunAyari.oyun.hak>0)
                 OyunAyari.oyun.SoruyuYenile();
             this.Close();
         }

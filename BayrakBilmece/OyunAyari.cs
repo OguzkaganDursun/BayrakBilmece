@@ -48,12 +48,53 @@ namespace BayrakBilmece
             }
             else
             {
+                Giris.anaMenu.MuzikDurdur(false);
                 oyun.oyunZorlugu = comboBox1.Text;
                 oyun.YenidenOyna();
                 oyun.Show();
                 this.Close();
                 Giris.anaMenu.Hide();
             }
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void checkBox2_CheckedChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void checkBox3_CheckedChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void checkBox4_CheckedChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void checkBox5_CheckedChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void checkBox6_CheckedChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
+        }
+
+        private void comboBox1_Click(object sender, EventArgs e)
+        {
+            Giris.anaMenu.ButonMuzigiCal();
         }
     }
 }
