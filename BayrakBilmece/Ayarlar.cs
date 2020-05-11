@@ -17,7 +17,7 @@ namespace BayrakBilmece
             InitializeComponent();
         }
         public bool oyunSesi;
-        public bool muzikSesi=false;
+        public bool muzikSesi;
         public int muzikSesiVolume;
         private void button1_Click(object sender, EventArgs e)
         {
@@ -26,16 +26,19 @@ namespace BayrakBilmece
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            //if (radioButton3.Checked)
-            //    muzikSesi = true;
-            //MessageBox.Show(muzikSesi.ToString());
+            if (radioButton3.Checked)
+                muzikSesi = true;
         }
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            //if (radioButton4.Checked)
-            //    muzikSesi = false;
-            //MessageBox.Show(muzikSesi.ToString());
+            if (radioButton4.Checked)
+                muzikSesi = false;
+        }
+
+        private void trackBar2_ValueChanged(object sender, EventArgs e)
+        {
+            Giris.anaMenu.MuzikVolumenuAyarla(trackBar2);
         }
     }
 }

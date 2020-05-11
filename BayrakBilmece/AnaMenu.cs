@@ -54,17 +54,29 @@ namespace BayrakBilmece
             progressBar1.Maximum = seviyeDegiskeni;
 
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\AnaMenuMusic.mp3";
-
-            bool muzikSesi= Giris.ayarlar.muzikSesi;
-
-            if (muzikSesi)
-            {
-                MessageBox.Show(muzikSesi.ToString());
-                Giris.ayarlar.muzikSesiVolume = Giris.ayarlar.trackBar2.Value;
-                axWindowsMediaPlayer1.settings.volume = Giris.ayarlar.muzikSesiVolume;
-                axWindowsMediaPlayer1.Ctlcontrols.play();              
-            }           
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            MuzikBaslat(Giris.ayarlar.muzikSesi);
         }
+        public void MuzikBaslat(bool muzikSesi)
+        {
+            if (muzikSesi)
+            {                
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+            }
+        }
+        public void MuzikDurdur(bool muzikSesi)
+        {
+            if (!muzikSesi)
+            {
+                axWindowsMediaPlayer1.Ctlcontrols.pause();
+            }
+        }
+        public void MuzikVolumenuAyarla(TrackBar trackBar)
+        {
+            Giris.ayarlar.muzikSesiVolume = trackBar.Value;
+            axWindowsMediaPlayer1.settings.volume = Giris.ayarlar.muzikSesiVolume;
+        }
+
 
         private void AnaMenu_FormClosed(object sender, FormClosedEventArgs e)
         {

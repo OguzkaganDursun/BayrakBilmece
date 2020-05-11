@@ -178,7 +178,7 @@ namespace BayrakBilmece
 
         private void Giris_Load(object sender, EventArgs e)
         {
-            ayarlar.oyunSesi = true;
+            //ayarlar.oyunSesi = true;
             ayarlar.muzikSesi = true;
         }
     }

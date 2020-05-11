@@ -130,6 +130,7 @@
             this.trackBar2.TickFrequency = 0;
             this.trackBar2.TickStyle = System.Windows.Forms.TickStyle.Both;
             this.trackBar2.Value = 50;
+            this.trackBar2.ValueChanged += new System.EventHandler(this.trackBar2_ValueChanged);
             // 
             // label3
             // 
