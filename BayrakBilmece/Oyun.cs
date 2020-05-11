@@ -322,6 +322,7 @@ namespace BayrakBilmece
             progressBar1.Value = 0;
             progressBar1.ForeColor = Color.FromArgb(255, red, green, blue);
             timer1.Start();
+            timer2.Start();
         }
         public void DogruCevap()
         {
@@ -331,6 +332,7 @@ namespace BayrakBilmece
             cevap.label1.ForeColor = Color.Gold;
             cevap.label1.Location = new Point((cevap.Width-cevap.label1.Width)/2,cevap.label1.Location.Y);
             timer1.Stop();
+            timer2.Stop();
             cevap.axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\DogruCevap.mp3";
             cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
             cevap.ShowDialog();
@@ -353,6 +355,7 @@ namespace BayrakBilmece
             cevap.label1.Text = "Yanlış";
             cevap.label1.ForeColor = Color.Red;
             timer1.Stop();
+            timer2.Stop();
             cevap.axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\YanlisCevap.mp3";
             cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
             cevap.ShowDialog();                  
@@ -445,6 +448,7 @@ namespace BayrakBilmece
             label3.Text = puan + " XP";        
             progressBar1.Value = 0;
             timer1.Start();
+            timer2.Start();
         }
         public void SureyiAzalt()
         {
@@ -452,7 +456,7 @@ namespace BayrakBilmece
             {
                 oyunSuresi -= 500;
                 progressBar1.Maximum = oyunSuresi;
-                timer2.Interval += 200;
+                timer2.Interval -= 100;
             }
         }
         private void pictureBox5_MouseHover(object sender, EventArgs e)
