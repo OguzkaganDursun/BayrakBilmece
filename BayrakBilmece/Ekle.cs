@@ -19,13 +19,15 @@ namespace BayrakBilmece
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
 
             if (textBox2.Text != "" && textBox3.Text != "" && textBox4.Text != ""&&pictureBox1.ImageLocation!=null)
             {
@@ -52,7 +54,8 @@ namespace BayrakBilmece
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             openFileDialog1.Title = "Bayrak Seçiniz!";
             openFileDialog1.Filter = "Png(*.png)|*.png";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
@@ -62,27 +65,32 @@ namespace BayrakBilmece
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void Ekle_Load(object sender, EventArgs e)

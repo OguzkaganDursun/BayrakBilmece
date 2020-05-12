@@ -204,9 +204,6 @@ namespace BayrakBilmece
                 }
                     
             }
-
-            //MessageBox.Show(secilenPicBoxlar[0] +" "+ secilenPicBoxlar[1] + " " + secilenPicBoxlar[2] + " " + secilenPicBoxlar[3] + " " + secilenPicBoxlar[4]);
-
         }
         public void UlkeSec()
         {
@@ -237,7 +234,6 @@ namespace BayrakBilmece
         }
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 1)
             {
                 DogruCevap();
@@ -249,7 +245,6 @@ namespace BayrakBilmece
         }
         private void pictureBox6_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 2)
             {
                 DogruCevap();
@@ -261,7 +256,6 @@ namespace BayrakBilmece
         }
         private void pictureBox7_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 3)
             {
                 DogruCevap();
@@ -273,7 +267,6 @@ namespace BayrakBilmece
         }
         private void pictureBox8_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 4)
             {
                 DogruCevap();
@@ -285,7 +278,6 @@ namespace BayrakBilmece
         }
         private void pictureBox9_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
             if (dogruCevap == 5)
             {
                 DogruCevap();
@@ -334,7 +326,9 @@ namespace BayrakBilmece
             timer1.Stop();
             timer2.Stop();
             cevap.axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\DogruCevap.mp3";
-            cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
+            cevap.axWindowsMediaPlayer1.Ctlcontrols.stop();
+            if (Giris.ayarlar.oyunSesi == true)
+                cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
             cevap.ShowDialog();
             puan += 100;
             oyuncuToplamPuani += 100;
@@ -357,7 +351,9 @@ namespace BayrakBilmece
             timer1.Stop();
             timer2.Stop();
             cevap.axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\YanlisCevap.mp3";
-            cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
+            cevap.axWindowsMediaPlayer1.Ctlcontrols.stop();
+            if (Giris.ayarlar.oyunSesi == true)
+                cevap.axWindowsMediaPlayer1.Ctlcontrols.play();
             cevap.ShowDialog();                  
             if (hak == 0)
             {
@@ -441,8 +437,6 @@ namespace BayrakBilmece
             pictureBox8.ImageLocation = null;
             pictureBox9.ImageLocation = null;
 
-            //MessageBox.Show(oyunZorlugu+" "+oyunSuresi);
-
             SoruyuYenile();
 
             label3.Text = puan + " XP";        
@@ -498,7 +492,8 @@ namespace BayrakBilmece
 
         private void timer2_Tick(object sender, EventArgs e)
         {
-            axWindowsMediaPlayer1.Ctlcontrols.play();
+            if (Giris.ayarlar.oyunSesi == true)
+                axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
         private void pictureBox9_MouseLeave(object sender, EventArgs e)

@@ -92,7 +92,8 @@
             this.trackBar1.TabIndex = 0;
             this.trackBar1.TickFrequency = 0;
             this.trackBar1.TickStyle = System.Windows.Forms.TickStyle.Both;
-            this.trackBar1.Value = 50;
+            this.trackBar1.Value = 20;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
             // 
             // label1
             // 
@@ -267,10 +268,10 @@
             // axWindowsMediaPlayer1
             // 
             this.axWindowsMediaPlayer1.Enabled = true;
-            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(-7, -3);
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(-13, -1);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(25, 23);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(10, 23);
             this.axWindowsMediaPlayer1.TabIndex = 15;
             this.axWindowsMediaPlayer1.Visible = false;
             // 

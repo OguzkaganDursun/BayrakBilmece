@@ -35,7 +35,8 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             Ekle ekle = new Ekle();
             IdGetir(ekle.textBox1);
             ekle.ShowDialog();
@@ -44,7 +45,8 @@ namespace BayrakBilmece
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             Duzenle duzenle = new Duzenle();
             TextBox[] texts = new TextBox[5];
             PictureBox pictureBox = new PictureBox();
@@ -61,14 +63,16 @@ namespace BayrakBilmece
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             KayitSil();          
             KayitlariListele();            
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             Giris giris = new Giris();
             giris.Show();
             this.Close();
@@ -194,8 +198,7 @@ namespace BayrakBilmece
             {
                 MessageBox.Show(acikla.Message, "Islem Başarısız");
                 baglanti.Close();
-            }          
-            //KayitlariListele();           
+            }                    
         }
         
         
@@ -217,7 +220,6 @@ namespace BayrakBilmece
                     komut1.ExecuteNonQuery();
                 }
                 baglanti.Close();
-                //MessageBox.Show("Id Sırala çalıştı");
             }
             catch (Exception acikla)
             {
@@ -225,11 +227,6 @@ namespace BayrakBilmece
                 baglanti.Close();
             }
         }
-
-        //private void Yonetici_FormClosed(object sender, FormClosedEventArgs e)
-        //{
-        //    Application.Exit();
-        //}
 
     }
 }

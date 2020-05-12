@@ -19,7 +19,8 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
             this.Close();
         }
     }

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AxWMPLib;
 
 namespace BayrakBilmece
 {
@@ -18,16 +19,18 @@ namespace BayrakBilmece
         }
         public bool oyunSesi;
         public bool muzikSesi;
-        public int muzikSesiVolume;
+
         private void button1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (oyunSesi == true)
+                ButonMuzigiCal();
             this.Close();
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (oyunSesi == true)
+                ButonMuzigiCal();
             if (radioButton3.Checked)
             {
                 muzikSesi = true;
@@ -38,7 +41,8 @@ namespace BayrakBilmece
 
         private void radioButton4_CheckedChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (oyunSesi==true)
+                ButonMuzigiCal();
             if (radioButton4.Checked)
             {
                 muzikSesi = false;
@@ -56,6 +60,7 @@ namespace BayrakBilmece
         {
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.stop();
+            
         }
 
         public void ButonMuzigiCal()
@@ -64,13 +69,32 @@ namespace BayrakBilmece
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
-        {
-            ButonMuzigiCal();
+        {           
+            if (radioButton1.Checked)
+            {
+                oyunSesi = true;
+            }
+            if (oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void radioButton2_CheckedChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (oyunSesi == true)
+                ButonMuzigiCal();
+            if (radioButton2.Checked)
+            {
+                oyunSesi = false;
+            }           
+        }
+        public void OyunSesiVolumenuAyarla(TrackBar trackBar)
+        {
+            axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+        }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            OyunSesiVolumenuAyarla(trackBar1);
         }
     }
 }

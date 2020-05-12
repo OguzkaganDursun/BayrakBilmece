@@ -77,20 +77,23 @@ namespace BayrakBilmece
         {
             PanelGotur(panel3);
             PanelGetir(panel4);
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             PanelGotur(panel3);
             PanelGetir(panel6);
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
         
         private void button7_Click(object sender, EventArgs e)
         {
             isimGirisi = textBox1.Text;
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             if (textBox1.Text == "İsim" || textBox1.Text == "" || textBox1.Text == " " || textBox1.Text == "  ")
             {
                 Uyari uyari = new Uyari();
@@ -107,7 +110,8 @@ namespace BayrakBilmece
 
         private void button5_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             if (textBox2.Text == yoneticiSifre)
             {
                 Yonetici yonetici = new Yonetici();
@@ -125,7 +129,8 @@ namespace BayrakBilmece
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             ayarlar.button1.Text = "Geri Dön";
             ayarlar.ShowDialog();
             
@@ -133,7 +138,8 @@ namespace BayrakBilmece
 
         private void pictureBox5_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             this.Close();
         }
 
@@ -145,7 +151,8 @@ namespace BayrakBilmece
 
         private void textBox1_KeyDown(object sender, KeyEventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             if (e.KeyCode==Keys.Enter)
             {
                 isimGirisi = textBox1.Text;
@@ -165,7 +172,8 @@ namespace BayrakBilmece
 
         private void textBox2_KeyDown(object sender, KeyEventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             if (e.KeyCode==Keys.Enter)
             {
                 if (textBox2.Text == yoneticiSifre)
@@ -185,11 +193,13 @@ namespace BayrakBilmece
 
         private void Giris_Load(object sender, EventArgs e)
         {
-            //ayarlar.oyunSesi = true;
-            ayarlar.muzikSesi = true;
+            if(ayarlar.oyunSesi!=false)
+                ayarlar.oyunSesi = true;
+            if(ayarlar.muzikSesi!=false)
+                ayarlar.muzikSesi = true;
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            
+            Giris.ayarlar.OyunSesiVolumenuAyarla(Giris.ayarlar.trackBar1);
         }
         public void ButonMuzigiCal()
         {

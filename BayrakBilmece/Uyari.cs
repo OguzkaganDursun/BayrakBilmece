@@ -19,7 +19,8 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             this.Close();
         }
 

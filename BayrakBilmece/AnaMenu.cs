@@ -25,27 +25,31 @@ namespace BayrakBilmece
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             OyunAyari oyunAyari = new OyunAyari();
             oyunAyari.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             Giris.ayarlar.ShowDialog();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             Hakkinda hakkinda = new Hakkinda();
             hakkinda.ShowDialog();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             KarakterSecimi karakterSecimi = new KarakterSecimi();
             karakterSecimi.ShowDialog();
         }
@@ -82,8 +86,7 @@ namespace BayrakBilmece
         }
         public void MuzikVolumenuAyarla(TrackBar trackBar)
         {
-            Giris.ayarlar.muzikSesiVolume = trackBar.Value;
-            axWindowsMediaPlayer1.settings.volume = Giris.ayarlar.muzikSesiVolume;
+            axWindowsMediaPlayer1.settings.volume = trackBar.Value;
         }
 
         public void ButonMuzigiCal()

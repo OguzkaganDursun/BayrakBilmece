@@ -22,13 +22,15 @@ namespace BayrakBilmece
         string dosyaYolu;
         private void button2_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             Guncelle();
         }
 
@@ -60,7 +62,8 @@ namespace BayrakBilmece
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
             openFileDialog1.Title = "Bayrak Seçiniz!";
             openFileDialog1.FileName = textBox2.Text;
             openFileDialog1.Filter = "Png(*.png)|*.png";
@@ -101,27 +104,32 @@ namespace BayrakBilmece
 
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void textBox4_TextChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                ButonMuzigiCal();
         }
     }
 }

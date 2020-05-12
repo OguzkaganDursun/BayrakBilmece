@@ -19,13 +19,16 @@ namespace BayrakBilmece
         public static Oyun oyun = new Oyun();
         private void button2_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
+
             this.Close();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
 
             if (checkBox1.Checked)
                 oyun.kitalar[0] = "Afrika";
@@ -59,42 +62,50 @@ namespace BayrakBilmece
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void checkBox2_CheckedChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void checkBox3_CheckedChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void checkBox4_CheckedChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void checkBox5_CheckedChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void checkBox6_CheckedChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
 
         private void comboBox1_Click(object sender, EventArgs e)
         {
-            Giris.anaMenu.ButonMuzigiCal();
+            if (Giris.ayarlar.oyunSesi == true)
+                Giris.anaMenu.ButonMuzigiCal();
         }
     }
 }
