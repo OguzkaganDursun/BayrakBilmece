@@ -496,6 +496,11 @@ namespace BayrakBilmece
                 axWindowsMediaPlayer1.Ctlcontrols.play();
         }
 
+        private void Oyun_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void pictureBox9_MouseLeave(object sender, EventArgs e)
         {
             this.pictureBox9.BorderStyle = BorderStyle.None;

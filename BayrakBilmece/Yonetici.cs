@@ -74,11 +74,9 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            //Giris.ActiveForm.Show();
-            Giris giris = new Giris();
-            giris.Show();
-
-            this.Close();
+            Giris.giris.YenidenBasla();
+            Giris.giris.Show();
+            this.Hide();
         }
         public void boyutAyarla()
         {
@@ -231,5 +229,9 @@ namespace BayrakBilmece
             }
         }
 
+        private void Yonetici_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

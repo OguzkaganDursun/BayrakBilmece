@@ -25,6 +25,7 @@ namespace BayrakBilmece
         public static Bilgilendirme bilgilendirme = new Bilgilendirme();
         public static Uyari uyari = new Uyari();
         public static AxWindowsMediaPlayer mediaPlayer = new AxWindowsMediaPlayer();
+        public static Giris giris = new Giris();
 
         int nokta = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -106,7 +107,7 @@ namespace BayrakBilmece
             else
             {
                 anaMenu.Show();
-                this.Hide();
+                giris.Hide();
             }            
             
         }
@@ -118,11 +119,10 @@ namespace BayrakBilmece
             if (textBox2.Text == yoneticiSifre)
             {
                 yonetici.Show();
-                this.Hide();
+                giris.Hide();
             }
             else 
-            {
-                
+            {              
                 uyari.textBox1.Text = "Hatalı Giriş Yaptınız !";
                 uyari.ShowDialog();
             }
@@ -142,12 +142,11 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            this.Close();
+            giris.Close();
         }
 
         private void textBox1_Click(object sender, EventArgs e)
         {
-
             textBox1.Clear();
         }
 
@@ -166,7 +165,7 @@ namespace BayrakBilmece
                 else
                 {
                     anaMenu.Show();
-                    this.Hide();
+                    giris.Hide();
                 }
             }
         }
@@ -180,7 +179,7 @@ namespace BayrakBilmece
                 if (textBox2.Text == yoneticiSifre)
                 {
                     yonetici.Show();
-                    this.Hide();
+                    giris.Hide();
                 }
                 else
                 {
@@ -192,6 +191,7 @@ namespace BayrakBilmece
 
         private void Giris_Load(object sender, EventArgs e)
         {
+            giris = this;
             if(ayarlar.oyunSesi==false)
                 ayarlar.oyunSesi = true;
             if(ayarlar.muzikSesi==false)
@@ -199,10 +199,27 @@ namespace BayrakBilmece
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.stop();
             mediaPlayer = axWindowsMediaPlayer1;
+
         }
         public void ButonMuzigiCal()
         {
             axWindowsMediaPlayer1.Ctlcontrols.play();
+        }
+        public void YenidenBasla()
+        {
+            panel2.Location = new Point(0,220);
+            panel3.Location = new Point(301, 220);
+            panel4.Location = new Point(601, 220);
+            panel5.Location = new Point(301, 461);
+            panel6.Location = new Point(901, 220);
+            progressBar1.Value = 0;
+            label3.Text = "%0";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            nokta = 0;
+            label2.Text = "Oyun Yükleniyor";
+            timer1.Start();
+            timer2.Start();
         }
     }
 }
