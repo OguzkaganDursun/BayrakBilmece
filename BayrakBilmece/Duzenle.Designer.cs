@@ -328,6 +328,6 @@
         public System.Windows.Forms.Label label4;
         public System.Windows.Forms.Label label3;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
+        public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }

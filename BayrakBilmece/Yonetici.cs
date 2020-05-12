@@ -18,6 +18,8 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        public Ekle ekle = new Ekle();
+        public Duzenle duzenle = new Duzenle();
         public void Yonetici_Load(object sender, EventArgs e)
         {
             KayitlariListele();
@@ -37,7 +39,7 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            Ekle ekle = new Ekle();
+            
             IdGetir(ekle.textBox1);
             ekle.ShowDialog();
             KayitlariListele();
@@ -47,7 +49,7 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            Duzenle duzenle = new Duzenle();
+            
             TextBox[] texts = new TextBox[5];
             PictureBox pictureBox = new PictureBox();
             texts[0] = duzenle.textBox1;
@@ -73,8 +75,10 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            Giris giris = new Giris();
-            giris.Show();
+            Giris.ActiveForm.Show();
+            //Giris giris = new Giris();            
+            //giris.Show();
+            
             this.Close();
         }
         public void boyutAyarla()

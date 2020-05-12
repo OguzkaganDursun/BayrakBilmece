@@ -16,8 +16,11 @@ namespace BayrakBilmece
         public AnaMenu()
         {
             InitializeComponent();
-        }        
-        
+        }
+        public OyunAyari oyunAyari = new OyunAyari();
+        public Hakkinda hakkinda = new Hakkinda();
+        public KarakterSecimi karakterSecimi = new KarakterSecimi();
+
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public int oyuncuToplamPuani=0;
         public int oyuncuSeviyesi = 0;
@@ -26,8 +29,7 @@ namespace BayrakBilmece
         private void button1_Click(object sender, EventArgs e)
         {
             if (Giris.ayarlar.oyunSesi == true)
-                ButonMuzigiCal();
-            OyunAyari oyunAyari = new OyunAyari();
+                ButonMuzigiCal();           
             oyunAyari.ShowDialog();
         }
 
@@ -42,7 +44,7 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            Hakkinda hakkinda = new Hakkinda();
+            
             hakkinda.ShowDialog();
         }
 
@@ -50,7 +52,7 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            KarakterSecimi karakterSecimi = new KarakterSecimi();
+
             karakterSecimi.ShowDialog();
         }
 

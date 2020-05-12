@@ -16,12 +16,11 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-        public static Oyun oyun = new Oyun();
+        public Oyun oyun = new Oyun();
         private void button2_Click(object sender, EventArgs e)
         {
             if (Giris.ayarlar.oyunSesi == true)
                 Giris.anaMenu.ButonMuzigiCal();
-
             this.Close();
         }
 

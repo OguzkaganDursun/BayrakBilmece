@@ -87,14 +87,23 @@ namespace BayrakBilmece
                 oyunSesi = false;
             }           
         }
-        public void OyunSesiVolumenuAyarla(TrackBar trackBar)
+        public void OyunSesiVolumenuAyarla(TrackBar trackBar,AxWindowsMediaPlayer muzik)
         {
-            axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            muzik.settings.volume = trackBar.Value;
+            Giris.anaMenu.axWindowsMediaPlayer2.settings.volume=trackBar.Value;
+            Giris.anaMenu.oyunAyari.oyun.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            Giris.bilgilendirme.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            Giris.uyari.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            Giris.anaMenu.oyunAyari.oyun.cevap.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            Giris.yonetici.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            Giris.yonetici.ekle.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+            Giris.yonetici.duzenle.axWindowsMediaPlayer1.settings.volume = trackBar.Value;
+
         }
 
         private void trackBar1_Scroll(object sender, EventArgs e)
         {
-            OyunSesiVolumenuAyarla(trackBar1);
+            OyunSesiVolumenuAyarla(trackBar1, axWindowsMediaPlayer1);
         }
     }
 }

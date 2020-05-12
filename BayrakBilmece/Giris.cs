@@ -21,6 +21,8 @@ namespace BayrakBilmece
         public static AnaMenu anaMenu = new AnaMenu();
         public static Yonetici yonetici = new Yonetici();
         public static Ayarlar ayarlar = new Ayarlar();
+        public static Bilgilendirme bilgilendirme = new Bilgilendirme();
+        public static Uyari uyari = new Uyari();
 
         int nokta = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -193,13 +195,13 @@ namespace BayrakBilmece
 
         private void Giris_Load(object sender, EventArgs e)
         {
-            if(ayarlar.oyunSesi!=false)
+            if(ayarlar.oyunSesi==false)
                 ayarlar.oyunSesi = true;
             if(ayarlar.muzikSesi!=false)
                 ayarlar.muzikSesi = true;
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            Giris.ayarlar.OyunSesiVolumenuAyarla(Giris.ayarlar.trackBar1);
+            //Giris.ayarlar.OyunSesiVolumenuAyarla(Giris.ayarlar.trackBar1);
         }
         public void ButonMuzigiCal()
         {

@@ -18,6 +18,8 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+
+        public Cevap cevap = new Cevap();
         //Oyun Ayarları Bilgileri
 
         public int red = 0, green = 255, blue = 0;
@@ -318,7 +320,7 @@ namespace BayrakBilmece
         }
         public void DogruCevap()
         {
-            Cevap cevap = new Cevap();
+            
             cevap.pictureBox1.ImageLocation = Application.StartupPath + dogruCevapBayrakYolu;
             cevap.label1.Text = "Tebrikler";
             cevap.label1.ForeColor = Color.Gold;
@@ -344,7 +346,6 @@ namespace BayrakBilmece
                 hak--;
                 OyuncuHakki(hak);
             }
-            Cevap cevap = new Cevap();
             cevap.pictureBox1.ImageLocation = Application.StartupPath + dogruCevapBayrakYolu;
             cevap.label1.Text = "Yanlış";
             cevap.label1.ForeColor = Color.Red;

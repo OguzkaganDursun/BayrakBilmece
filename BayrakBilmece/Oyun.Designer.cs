@@ -356,7 +356,7 @@
         public System.Windows.Forms.PictureBox kalp1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel1;
-        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
         private System.Windows.Forms.Timer timer2;
+        public AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
