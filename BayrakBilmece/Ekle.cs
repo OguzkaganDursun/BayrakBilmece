@@ -16,7 +16,8 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-
+        public Bilgilendirme bilgilendirme = new Bilgilendirme();
+        public Uyari uyari = new Uyari();
         private void button2_Click(object sender, EventArgs e)
         {
             if (Giris.ayarlar.oyunSesi == true)
@@ -39,14 +40,14 @@ namespace BayrakBilmece
                 texts[3] = textBox4;
                 combo = comboBox1;
                 Giris.yonetici.Ekle(texts, combo,pictureBox1);
-                Bilgilendirme bilgilendirme = new Bilgilendirme();
+                
                 bilgilendirme.textBox1.Text = "Veri Eklendi";
                 bilgilendirme.ShowDialog();
                 this.Close();
             }
             else
             {
-                Uyari uyari = new Uyari();
+                
                 uyari.textBox1.Text = "Lütfen Bütün Alanları Doldurunuz";
                 uyari.ShowDialog();
             }

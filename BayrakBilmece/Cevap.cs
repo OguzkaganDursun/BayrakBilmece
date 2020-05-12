@@ -16,15 +16,29 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
-
+        bool yeniSoru = true;
 
         private void button1_Click(object sender, EventArgs e)
         {
             if (Giris.ayarlar.oyunSesi == true)
                 Giris.anaMenu.ButonMuzigiCal();
-            if (OyunAyari.oyun.hak>0)
-                OyunAyari.oyun.SoruyuYenile();
+            if (Giris.anaMenu.oyunAyari.oyun.hak>0)
+                Giris.anaMenu.oyunAyari.oyun.SoruyuYenile();
+            yeniSoru = false;
             this.Close();
+        }
+
+        private void Cevap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (yeniSoru==true)
+            {
+                if (Giris.ayarlar.oyunSesi == true)
+                    Giris.anaMenu.ButonMuzigiCal();
+                if (Giris.anaMenu.oyunAyari.oyun.hak > 0)
+                    Giris.anaMenu.oyunAyari.oyun.SoruyuYenile();
+            }
+            yeniSoru = true;
+            
         }
     }
 }

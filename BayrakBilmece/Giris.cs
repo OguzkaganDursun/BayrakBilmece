@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AxWMPLib;
 
 namespace BayrakBilmece
 {
@@ -23,6 +24,7 @@ namespace BayrakBilmece
         public static Ayarlar ayarlar = new Ayarlar();
         public static Bilgilendirme bilgilendirme = new Bilgilendirme();
         public static Uyari uyari = new Uyari();
+        public static AxWindowsMediaPlayer mediaPlayer = new AxWindowsMediaPlayer();
 
         int nokta = 0;
         private void timer1_Tick(object sender, EventArgs e)
@@ -98,7 +100,6 @@ namespace BayrakBilmece
                 ButonMuzigiCal();
             if (textBox1.Text == "İsim" || textBox1.Text == "" || textBox1.Text == " " || textBox1.Text == "  ")
             {
-                Uyari uyari = new Uyari();
                 uyari.textBox1.Text = "Lütfen Bir İsim Giriniz !";
                 uyari.ShowDialog();
             }
@@ -116,13 +117,12 @@ namespace BayrakBilmece
                 ButonMuzigiCal();
             if (textBox2.Text == yoneticiSifre)
             {
-                Yonetici yonetici = new Yonetici();
                 yonetici.Show();
                 this.Hide();
             }
             else 
             {
-                Uyari uyari = new Uyari();
+                
                 uyari.textBox1.Text = "Hatalı Giriş Yaptınız !";
                 uyari.ShowDialog();
             }
@@ -160,7 +160,6 @@ namespace BayrakBilmece
                 isimGirisi = textBox1.Text;
                 if (textBox1.Text == "İsim" || textBox1.Text == "" || textBox1.Text == " " || textBox1.Text == "  ")
                 {
-                    Uyari uyari = new Uyari();
                     uyari.textBox1.Text = "Lütfen Bir İsim Giriniz !";
                     uyari.ShowDialog();
                 }
@@ -180,13 +179,11 @@ namespace BayrakBilmece
             {
                 if (textBox2.Text == yoneticiSifre)
                 {
-                    Yonetici yonetici = new Yonetici();
                     yonetici.Show();
                     this.Hide();
                 }
                 else
                 {
-                    Uyari uyari = new Uyari();
                     uyari.textBox1.Text = "Hatalı Giriş Yaptınız !";
                     uyari.ShowDialog();
                 }
@@ -197,11 +194,11 @@ namespace BayrakBilmece
         {
             if(ayarlar.oyunSesi==false)
                 ayarlar.oyunSesi = true;
-            if(ayarlar.muzikSesi!=false)
+            if(ayarlar.muzikSesi==false)
                 ayarlar.muzikSesi = true;
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.stop();
-            //Giris.ayarlar.OyunSesiVolumenuAyarla(Giris.ayarlar.trackBar1);
+            mediaPlayer = axWindowsMediaPlayer1;
         }
         public void ButonMuzigiCal()
         {

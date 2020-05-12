@@ -20,25 +20,25 @@ namespace BayrakBilmece
         OleDbConnection baglanti = new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         private void button2_Click(object sender, EventArgs e)
         {
-
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
             if (Giris.ayarlar.oyunSesi == true)
                 Giris.anaMenu.ButonMuzigiCal();
 
-            OyunAyari.oyun.kitalar[0] = "";
-            OyunAyari.oyun.kitalar[1] = "";
-            OyunAyari.oyun.kitalar[2] = "";
-            OyunAyari.oyun.kitalar[3] = "";
-            OyunAyari.oyun.kitalar[4] = "";
-            OyunAyari.oyun.kitalar[5] = "";
+            Giris.anaMenu.oyunAyari.oyun.kitalar[0] = "";
+            Giris.anaMenu.oyunAyari.oyun.kitalar[1] = "";
+            Giris.anaMenu.oyunAyari.oyun.kitalar[2] = "";
+            Giris.anaMenu.oyunAyari.oyun.kitalar[3] = "";
+            Giris.anaMenu.oyunAyari.oyun.kitalar[4] = "";
+            Giris.anaMenu.oyunAyari.oyun.kitalar[5] = "";
 
             Giris.anaMenu.label3.Text = label7.Text;
-            Giris.anaMenu.oyuncuToplamPuani = OyunAyari.oyun.oyuncuToplamPuani ;
+            Giris.anaMenu.oyuncuToplamPuani = Giris.anaMenu.oyunAyari.oyun.oyuncuToplamPuani ;
             
             Giris.anaMenu.SeviyeAtla();
             VeriTabaninaGonder();
-            OyunAyari.oyun.oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;
+            Giris.anaMenu.oyunAyari.oyun.oyuncuToplamPuani = Giris.anaMenu.oyuncuToplamPuani;
             Giris.anaMenu.Show();
-            OyunAyari.oyun.Hide();
+            Giris.anaMenu.oyunAyari.oyun.Hide();
             if(Giris.ayarlar.muzikSesi==true)
                 Giris.anaMenu.MuzikBaslat(true);
             this.Close();
@@ -47,7 +47,8 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 Giris.anaMenu.ButonMuzigiCal();
-            OyunAyari.oyun.YenidenOyna();
+            Giris.anaMenu.oyunAyari.oyun.YenidenOyna();
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
             this.Close();
         }
 
@@ -68,5 +69,13 @@ namespace BayrakBilmece
             }
         }
 
+        private void Sonuc_Load(object sender, EventArgs e)
+        {
+            axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\SonucEkraniMuzigi.mp3";
+            axWindowsMediaPlayer1.Ctlcontrols.stop();
+            if (Giris.ayarlar.oyunSesi == true)
+                axWindowsMediaPlayer1.Ctlcontrols.play();
+                
+        }
     }
 }

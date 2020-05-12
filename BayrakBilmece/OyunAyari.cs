@@ -17,6 +17,7 @@ namespace BayrakBilmece
             InitializeComponent();
         }
         public Oyun oyun = new Oyun();
+        public Uyari uyari = new Uyari();
         private void button2_Click(object sender, EventArgs e)
         {
             if (Giris.ayarlar.oyunSesi == true)
@@ -43,8 +44,7 @@ namespace BayrakBilmece
                 oyun.kitalar[5] = "Okyanusya";
             if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked && !checkBox4.Checked && !checkBox5.Checked 
                 && !checkBox6.Checked)
-            {
-                Uyari uyari = new Uyari();
+            {             
                 uyari.textBox1.Text = "En Az Bir Kıta Seçiniz!";
                 uyari.ShowDialog();
             }

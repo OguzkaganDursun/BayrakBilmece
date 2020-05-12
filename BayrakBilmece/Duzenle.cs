@@ -19,6 +19,7 @@ namespace BayrakBilmece
         {
             InitializeComponent();
         }
+        public Bilgilendirme bilgilendirme = new Bilgilendirme();
         string dosyaYolu;
         private void button2_Click(object sender, EventArgs e)
         {
@@ -42,7 +43,6 @@ namespace BayrakBilmece
                 OleDbCommand komut = new OleDbCommand("update ulke_bilgileri set Isim='" + textBox2.Text + "',Baskent='" + textBox3.Text + "',Nufus='" + textBox4.Text + "',Kita='" + comboBox1.Text + "',Bayrak='"+dosyaYolu+"' where Id=" + Convert.ToInt32(textBox1.Text), baglanti);
                 komut.ExecuteNonQuery();
                 baglanti.Close();
-                //MessageBox.Show("İşlem Tamam");
                 Bilgilendirme();              
             }
             catch (Exception aciklama)
@@ -54,7 +54,6 @@ namespace BayrakBilmece
         private void Bilgilendirme()
         {
             Giris.yonetici.KayitlariListele();
-            Bilgilendirme bilgilendirme = new Bilgilendirme();
             bilgilendirme.textBox1.Text = "Veri Güncellendi";
             bilgilendirme.ShowDialog();
             this.Close();

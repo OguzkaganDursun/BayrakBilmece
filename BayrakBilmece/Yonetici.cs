@@ -13,19 +13,19 @@ namespace BayrakBilmece
 {
     public partial class Yonetici : Form
     {
+        public Ekle ekle = new Ekle();
+        public Duzenle duzenle = new Duzenle();
         OleDbConnection baglanti =new OleDbConnection("Provider=Microsoft.Jet.OleDb.4.0;Data Source=Ulke.mdb");
         public Yonetici()
         {
             InitializeComponent();
         }
-        public Ekle ekle = new Ekle();
-        public Duzenle duzenle = new Duzenle();
+
         public void Yonetici_Load(object sender, EventArgs e)
         {
             KayitlariListele();
             IdGetir(textBox1);
             textBox1.Text = (Convert.ToInt32(textBox1.Text) - 1).ToString();
-
             axWindowsMediaPlayer1.URL = Application.StartupPath + "\\Muzik\\ButonSesi.mp3";
             axWindowsMediaPlayer1.Ctlcontrols.stop();
         }
@@ -38,8 +38,7 @@ namespace BayrakBilmece
         private void button1_Click(object sender, EventArgs e)
         {
             if (Giris.ayarlar.oyunSesi == true)
-                ButonMuzigiCal();
-            
+                ButonMuzigiCal();            
             IdGetir(ekle.textBox1);
             ekle.ShowDialog();
             KayitlariListele();
@@ -75,10 +74,10 @@ namespace BayrakBilmece
         {
             if (Giris.ayarlar.oyunSesi == true)
                 ButonMuzigiCal();
-            Giris.ActiveForm.Show();
-            //Giris giris = new Giris();            
-            //giris.Show();
-            
+            //Giris.ActiveForm.Show();
+            Giris giris = new Giris();
+            giris.Show();
+
             this.Close();
         }
         public void boyutAyarla()

@@ -20,6 +20,7 @@ namespace BayrakBilmece
         }
 
         public Cevap cevap = new Cevap();
+        public Sonuc sonuc = new Sonuc();
         //Oyun Ayarları Bilgileri
 
         public int red = 0, green = 255, blue = 0;
@@ -120,7 +121,6 @@ namespace BayrakBilmece
                     soruMetni += ", ";
             }
             soruMetni += " Olan Ülke Hangisidir ?";
-            //textBox2.Text = soruMetni;
             label5.Text = soruMetni;
             label5.Location = new Point((this.Width-label5.Width)/2,label5.Location.Y);
 
@@ -358,7 +358,6 @@ namespace BayrakBilmece
             cevap.ShowDialog();                  
             if (hak == 0)
             {
-                Sonuc sonuc = new Sonuc();
                 OyuncuBilgileriniSonucaGonder(sonuc);
                 sonuc.ShowDialog();
             }       
@@ -524,7 +523,7 @@ namespace BayrakBilmece
             {
                 timer1.Stop();
                 timer2.Stop();
-                Sonuc sonuc = new Sonuc();
+                
                 OyuncuBilgileriniSonucaGonder(sonuc);
                 sonuc.ShowDialog();
             }
